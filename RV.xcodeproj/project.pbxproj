@@ -17,6 +17,7 @@
 		3C0F34221EDCE6AD00D60AAE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F34211EDCE6AD00D60AAE /* LoginViewController.swift */; };
 		3C0F34241EDCE8F900D60AAE /* PreachingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F34231EDCE8F900D60AAE /* PreachingsViewController.swift */; };
 		3C0F34261EDCEE6800D60AAE /* PreachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F34251EDCEE6800D60AAE /* PreachCell.swift */; };
+		3C0F34281EDCF58D00D60AAE /* DesignManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F34271EDCF58D00D60AAE /* DesignManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3C0F34211EDCE6AD00D60AAE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3C0F34231EDCE8F900D60AAE /* PreachingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreachingsViewController.swift; sourceTree = "<group>"; };
 		3C0F34251EDCEE6800D60AAE /* PreachCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreachCell.swift; sourceTree = "<group>"; };
+		3C0F34271EDCF58D00D60AAE /* DesignManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				3C0F34211EDCE6AD00D60AAE /* LoginViewController.swift */,
 				3C0F34231EDCE8F900D60AAE /* PreachingsViewController.swift */,
 				3C0F34251EDCEE6800D60AAE /* PreachCell.swift */,
+				3C0F34271EDCF58D00D60AAE /* DesignManager.swift */,
 			);
 			path = RV;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C0F34261EDCEE6800D60AAE /* PreachCell.swift in Sources */,
+				3C0F34281EDCF58D00D60AAE /* DesignManager.swift in Sources */,
 				3C0F34241EDCE8F900D60AAE /* PreachingsViewController.swift in Sources */,
 				3C0F34221EDCE6AD00D60AAE /* LoginViewController.swift in Sources */,
 				3C0F33F61EDCE1BC00D60AAE /* ViewController.swift in Sources */,
