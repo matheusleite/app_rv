@@ -9,6 +9,17 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Quicksand-Light.ttf">
+            <string>Quicksand-Light</string>
+        </array>
+        <array key="Quicksand-Medium.ttf">
+            <string>Quicksand-Medium</string>
+        </array>
+        <array key="Quicksand-Regular.ttf">
+            <string>Quicksand-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="GkL-Wv-uMp">
@@ -22,44 +33,106 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jyf-Or-D3q">
-                                <rect key="frame" x="16" y="213" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jyf-Or-D3q">
+                                <rect key="frame" x="16" y="228" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.20266399409819291" green="0.28511059527784854" blue="0.35214154411764698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="a9v-4U-xtp"/>
+                                </constraints>
+                                <color key="textColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54H-1A-mKl">
-                                <rect key="frame" x="16" y="296" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="54H-1A-mKl">
+                                <rect key="frame" x="16" y="325" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.20266399409819291" green="0.28511059527784854" blue="0.35214154411764698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="KMC-jW-XCN"/>
+                                </constraints>
+                                <color key="textColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqF-c3-H6b">
-                                <rect key="frame" x="154" y="376" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Entrar"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqF-c3-H6b">
+                                <rect key="frame" x="132" y="396" width="110" height="42"/>
+                                <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="90c-C4-McR"/>
+                                    <constraint firstAttribute="width" constant="110" id="tYX-a6-Zg8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="17"/>
+                                <state key="normal" title="Entrar">
+                                    <color key="titleColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="signIn:" destination="n6P-vw-lZR" eventType="touchUpInside" id="WXT-YP-TCR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jC-Bd-18B">
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jC-Bd-18B">
                                 <rect key="frame" x="144" y="603" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cadastro"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SNQ-ud-rKd"/>
+                                    <constraint firstAttribute="width" constant="87" id="iyy-ic-77k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="17"/>
+                                <state key="normal" title="Cadastro">
+                                    <color key="titleColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="72k-vy-TvF" kind="show" id="ILn-dl-jOl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fx-La-Rzk">
-                                <rect key="frame" x="243" y="258" width="116" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Esqueceu?"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fx-La-Rzk">
+                                <rect key="frame" x="243" y="287" width="116" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ofh-fj-zYW"/>
+                                    <constraint firstAttribute="width" constant="116" id="gkL-5x-bXV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="12"/>
+                                <state key="normal" title="Esqueceu?">
+                                    <color key="titleColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para começar, entre com seu usuário e senha" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGf-M9-FfP">
+                                <rect key="frame" x="90" y="166" width="195" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="F6F-dA-PFF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.99667292829999998" blue="0.98753482100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REVISÃO DE VIDAS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3P-nN-Plb">
+                                <rect key="frame" x="80" y="39" width="214" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="HoF-jJ-9Dt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Quicksand-Light" family="Quicksand" pointSize="29"/>
+                                <color key="textColor" red="1" green="0.99667292829999998" blue="0.98753482100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jyf-Or-D3q" firstAttribute="trailing" secondItem="8fx-La-Rzk" secondAttribute="trailing" id="5CY-hm-RKk"/>
+                            <constraint firstItem="RGf-M9-FfP" firstAttribute="centerX" secondItem="jyf-Or-D3q" secondAttribute="centerX" id="5UP-hA-LV7"/>
+                            <constraint firstItem="Y3P-nN-Plb" firstAttribute="leading" secondItem="3dR-A8-pak" secondAttribute="leadingMargin" constant="64" id="8uS-Fc-dFS"/>
+                            <constraint firstItem="8fx-La-Rzk" firstAttribute="trailing" secondItem="54H-1A-mKl" secondAttribute="trailing" id="B3r-QC-Li7"/>
+                            <constraint firstItem="jyf-Or-D3q" firstAttribute="trailing" secondItem="3dR-A8-pak" secondAttribute="trailingMargin" id="CMz-wG-y2b"/>
+                            <constraint firstItem="RGf-M9-FfP" firstAttribute="leading" secondItem="3dR-A8-pak" secondAttribute="leadingMargin" constant="74" id="Kls-fP-cF4"/>
+                            <constraint firstItem="Y3P-nN-Plb" firstAttribute="top" secondItem="Zlq-Qa-Sp6" secondAttribute="bottom" constant="19" id="LyX-F7-LNa"/>
+                            <constraint firstItem="jyf-Or-D3q" firstAttribute="leading" secondItem="54H-1A-mKl" secondAttribute="leading" id="ROP-3D-zbS"/>
+                            <constraint firstItem="lqF-c3-H6b" firstAttribute="top" secondItem="54H-1A-mKl" secondAttribute="bottom" constant="26" id="Sot-rt-LnJ"/>
+                            <constraint firstItem="lqF-c3-H6b" firstAttribute="centerX" secondItem="9jC-Bd-18B" secondAttribute="centerX" id="X87-p0-yZt"/>
+                            <constraint firstItem="54H-1A-mKl" firstAttribute="top" secondItem="8fx-La-Rzk" secondAttribute="bottom" constant="8" symbolic="YES" id="aZW-Ld-xVk"/>
+                            <constraint firstItem="jyf-Or-D3q" firstAttribute="leading" secondItem="3dR-A8-pak" secondAttribute="leadingMargin" id="apy-TA-kAU"/>
+                            <constraint firstItem="RGf-M9-FfP" firstAttribute="top" secondItem="Y3P-nN-Plb" secondAttribute="bottom" constant="27" id="bOx-mv-IS8"/>
+                            <constraint firstItem="jyf-Or-D3q" firstAttribute="top" secondItem="RGf-M9-FfP" secondAttribute="bottom" constant="7" id="hNr-mb-1St"/>
+                            <constraint firstItem="GDX-9C-idZ" firstAttribute="top" secondItem="9jC-Bd-18B" secondAttribute="bottom" constant="34" id="hzR-w3-jJf"/>
+                            <constraint firstItem="Y3P-nN-Plb" firstAttribute="centerX" secondItem="RGf-M9-FfP" secondAttribute="centerX" id="icC-6D-ica"/>
+                            <constraint firstItem="54H-1A-mKl" firstAttribute="centerX" secondItem="lqF-c3-H6b" secondAttribute="centerX" id="tDt-H2-lOg"/>
+                            <constraint firstItem="8fx-La-Rzk" firstAttribute="top" secondItem="jyf-Or-D3q" secondAttribute="bottom" constant="14" id="u4W-Hj-IoS"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="54H-1A-mKl" id="WUd-l2-udr"/>
@@ -69,13 +142,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZu-Ap-jv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1146" y="507"/>
+            <point key="canvasLocation" x="-1146.4000000000001" y="506.89655172413796"/>
         </scene>
         <!--Palavras-->
         <scene sceneID="rG1-QO-kA2">
             <objects>
                 <navigationController id="2AH-OH-AdS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Palavras" id="Pxw-Kd-3an"/>
+                    <tabBarItem key="tabBarItem" title="Palavras" image="bible" selectedImage="bible_selected" id="Pxw-Kd-3an"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="ybR-6f-8eC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -97,9 +170,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="2AH-OH-AdS" kind="relationship" relationship="viewControllers" id="Xnc-aQ-WBw"/>
@@ -125,10 +198,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-tY-GvC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="554" id="bMU-sR-bPy"/>
+                                    <constraint firstAttribute="height" constant="510" id="bMU-sR-bPy"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="preachCell" rowHeight="75" id="vEq-e8-Jzo" customClass="PreachCell" customModule="RV" customModuleProvider="target">
@@ -139,8 +212,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEw-XZ-yTF">
-                                                    <rect key="frame" x="15" y="27" width="53" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="15" y="27" width="53" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -149,13 +222,13 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="rcT-JU-1tE"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pastor Carlos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KP-8H-yY9">
                                                     <rect key="frame" x="94" y="37" width="273" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
                                                     <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -187,6 +260,7 @@
                                     <segment title="Todas"/>
                                     <segment title="Minhas"/>
                                 </segments>
+                                <color key="tintColor" red="0.16078431372549018" green="0.50196078431372548" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="segmentChanged:" destination="Cwr-tw-Bf1" eventType="valueChanged" id="ofi-HN-jdW"/>
                                 </connections>
@@ -203,7 +277,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Palavras" id="LJW-pG-aNY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="92X-yp-AuP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="92X-yp-AuP">
+                            <color key="tintColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="segmentedControl" destination="7qM-pB-AlD" id="0fD-3h-9jw"/>
@@ -218,7 +294,7 @@
         <scene sceneID="Mbc-Lv-r7S">
             <objects>
                 <navigationController id="bp7-Nr-JdG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Escala" id="1OM-jZ-SBo"/>
+                    <tabBarItem key="tabBarItem" title="Escala" image="schedule" selectedImage="schedule_selected" id="1OM-jZ-SBo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Nk7-sJ-zLq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -266,6 +342,7 @@
                                     <segment title="Intercessão"/>
                                     <segment title="Banheiros"/>
                                 </segments>
+                                <color key="tintColor" red="0.16078431372549018" green="0.50196078431372548" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -334,7 +411,7 @@
         <scene sceneID="z8T-HA-ExB">
             <objects>
                 <navigationController id="fAv-OI-cRz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Funções" id="Jfh-08-egi"/>
+                    <tabBarItem key="tabBarItem" title="Funções" image="function" selectedImage="function_selected" id="Jfh-08-egi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="fuq-cH-f3r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -361,10 +438,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kOS-ez-Lf2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="554" id="jBP-Wa-fNi"/>
+                                    <constraint firstAttribute="height" constant="510" id="jBP-Wa-fNi"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="preachCell" rowHeight="75" id="x66-Ks-ZId" customClass="PreachCell" customModule="RV" customModuleProvider="target">
@@ -423,6 +500,7 @@
                                     <segment title="Todas"/>
                                     <segment title="Minhas"/>
                                 </segments>
+                                <color key="tintColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="segmentChanged:" destination="kTy-it-bdJ" eventType="valueChanged" id="2pj-Ws-VeV"/>
                                 </connections>
@@ -439,8 +517,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Funções" id="JXI-MX-Osh">
-                        <barButtonItem key="leftBarButtonItem" title="Options" id="04p-1V-pVD"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ahi-TM-7Yk"/>
+                        <barButtonItem key="leftBarButtonItem" title="Options" id="04p-1V-pVD">
+                            <color key="tintColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ahi-TM-7Yk">
+                            <color key="tintColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="segmentedControl" destination="tys-Nj-CNz" id="5f8-Qw-Hdx"/>
@@ -455,7 +537,7 @@
         <scene sceneID="hqI-VT-95C">
             <objects>
                 <navigationController id="prX-E5-Hqz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Lista" id="CCA-l8-fhE"/>
+                    <tabBarItem key="tabBarItem" title="Lista" image="list" selectedImage="list_selected" id="CCA-l8-fhE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="v3j-QE-oyy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -482,10 +564,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RPq-hf-URG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="554" id="0ch-1k-2nK"/>
+                                    <constraint firstAttribute="height" constant="510" id="0ch-1k-2nK"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="listCell" rowHeight="75" id="PSg-Zx-5En" customClass="PreachCell" customModule="RV" customModuleProvider="target">
@@ -532,6 +614,7 @@
                                     <segment title="Líderes"/>
                                     <segment title="Revisionistas"/>
                                 </segments>
+                                <color key="tintColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="segmentChanged:" destination="gfo-U5-guK" eventType="valueChanged" id="f1e-ht-0wP"/>
                                 </connections>
@@ -548,8 +631,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lista de Pessoas" id="tAa-Ft-gJC">
-                        <barButtonItem key="leftBarButtonItem" title="Options" id="8eT-4v-aSr"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="NCB-jc-y0M"/>
+                        <barButtonItem key="leftBarButtonItem" title="Options" id="8eT-4v-aSr">
+                            <color key="tintColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="NCB-jc-y0M">
+                            <color key="tintColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="segmentedControl" destination="7Oq-ju-eCE" id="J8c-Wh-ApE"/>
@@ -562,7 +649,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bible" width="25" height="25"/>
+        <image name="bible_selected" width="25" height="25"/>
         <image name="cv_logo" width="3414" height="755"/>
+        <image name="function" width="25" height="25"/>
+        <image name="function_selected" width="25" height="25"/>
+        <image name="list" width="25" height="25"/>
+        <image name="list_selected" width="25" height="25"/>
+        <image name="schedule" width="25" height="25"/>
+        <image name="schedule_selected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Oqe-nD-cZk"/>
