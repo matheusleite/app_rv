@@ -54,16 +54,24 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqF-c3-H6b">
-                                <rect key="frame" x="132" y="396" width="110" height="42"/>
-                                <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="396" width="343" height="42"/>
+                                <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="90c-C4-McR"/>
-                                    <constraint firstAttribute="width" constant="110" id="tYX-a6-Zg8"/>
+                                    <constraint firstAttribute="width" constant="343" id="tYX-a6-Zg8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="17"/>
                                 <state key="normal" title="Entrar">
                                     <color key="titleColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="0.99667292829999998" blue="0.98753482100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signIn:" destination="n6P-vw-lZR" eventType="touchUpInside" id="WXT-YP-TCR"/>
                                 </connections>
@@ -428,7 +436,7 @@
         <!--Funções-->
         <scene sceneID="hZl-lm-ae8">
             <objects>
-                <viewController id="kTy-it-bdJ" customClass="PreachingsViewController" customModule="RV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kTy-it-bdJ" customClass="FunctionsViewController" customModule="RV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hiM-jk-P20"/>
                         <viewControllerLayoutGuide type="bottom" id="9zh-Um-1qI"/>
@@ -444,52 +452,44 @@
                                     <constraint firstAttribute="height" constant="510" id="jBP-Wa-fNi"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="preachCell" rowHeight="75" id="x66-Ks-ZId" customClass="PreachCell" customModule="RV" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="funcCell" rowHeight="75" id="3Rb-ds-smq" customClass="FunctionsTableViewCell" customModule="RV" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x66-Ks-ZId" id="25f-SZ-1iX">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Rb-ds-smq" id="tsX-AX-BY0">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zl-xq-aJ6">
-                                                    <rect key="frame" x="15" y="27" width="53" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palavra de Deus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNG-Ex-wkM">
-                                                    <rect key="frame" x="94" y="8" width="273" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordenação de Tenda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Py-YH-cVJ">
+                                                    <rect key="frame" x="20" y="8" width="346" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="yZf-b2-0I5"/>
+                                                        <constraint firstAttribute="height" constant="21" id="nSp-xG-AcY"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pastor Carlos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SF-cQ-Sze">
-                                                    <rect key="frame" x="94" y="37" width="273" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pastor Carlos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVb-5q-JWl">
+                                                    <rect key="frame" x="20" y="37" width="347" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
                                                     <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bNG-Ex-wkM" firstAttribute="leading" secondItem="0SF-cQ-Sze" secondAttribute="leading" id="87W-Uq-U6I"/>
-                                                <constraint firstItem="bNG-Ex-wkM" firstAttribute="trailing" secondItem="0SF-cQ-Sze" secondAttribute="trailing" id="9m9-Gr-fEH"/>
-                                                <constraint firstItem="8Zl-xq-aJ6" firstAttribute="centerY" secondItem="25f-SZ-1iX" secondAttribute="centerY" id="IH8-50-g7f"/>
-                                                <constraint firstItem="bNG-Ex-wkM" firstAttribute="top" secondItem="25f-SZ-1iX" secondAttribute="topMargin" id="K6M-Fq-Zpo"/>
-                                                <constraint firstItem="0SF-cQ-Sze" firstAttribute="top" secondItem="bNG-Ex-wkM" secondAttribute="bottom" constant="8" symbolic="YES" id="S5p-Ja-8R9"/>
-                                                <constraint firstItem="0SF-cQ-Sze" firstAttribute="leading" secondItem="8Zl-xq-aJ6" secondAttribute="trailing" constant="26" id="X1I-JX-bYQ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="0SF-cQ-Sze" secondAttribute="bottom" constant="8" id="dy3-5Y-viN"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bNG-Ex-wkM" secondAttribute="trailing" constant="-33" id="gnl-Y7-aio"/>
-                                                <constraint firstItem="8Zl-xq-aJ6" firstAttribute="leading" secondItem="25f-SZ-1iX" secondAttribute="leadingMargin" constant="7" id="hZ3-2b-6uY"/>
-                                                <constraint firstItem="bNG-Ex-wkM" firstAttribute="leading" secondItem="25f-SZ-1iX" secondAttribute="leadingMargin" constant="86" id="lS2-gL-SSN"/>
+                                                <constraint firstItem="nVb-5q-JWl" firstAttribute="top" secondItem="7Py-YH-cVJ" secondAttribute="bottom" constant="8" symbolic="YES" id="EUn-Rw-M1V"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7Py-YH-cVJ" secondAttribute="trailing" constant="-32" id="Kc5-F1-NIw"/>
+                                                <constraint firstItem="7Py-YH-cVJ" firstAttribute="trailing" secondItem="nVb-5q-JWl" secondAttribute="trailing" constant="-1" id="VOn-ug-7qp"/>
+                                                <constraint firstItem="7Py-YH-cVJ" firstAttribute="leading" secondItem="tsX-AX-BY0" secondAttribute="leadingMargin" constant="12" id="Wls-bC-jKY"/>
+                                                <constraint firstItem="7Py-YH-cVJ" firstAttribute="leading" secondItem="nVb-5q-JWl" secondAttribute="leading" id="bIh-fL-I5A"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nVb-5q-JWl" secondAttribute="bottom" constant="8" id="fko-KI-YKk"/>
+                                                <constraint firstItem="7Py-YH-cVJ" firstAttribute="top" secondItem="tsX-AX-BY0" secondAttribute="topMargin" id="v4N-fw-yTw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="time" destination="8Zl-xq-aJ6" id="m38-OO-5ou"/>
-                                            <outlet property="title" destination="bNG-Ex-wkM" id="sl4-bE-AF3"/>
-                                            <outlet property="userName" destination="0SF-cQ-Sze" id="G5a-dk-sj2"/>
+                                            <outlet property="functionLabel" destination="7Py-YH-cVJ" id="4ZL-aD-TbV"/>
+                                            <outlet property="title" destination="7Py-YH-cVJ" id="l1D-Qz-0wL"/>
+                                            <outlet property="userName" destination="nVb-5q-JWl" id="t91-nt-6cX"/>
+                                            <outlet property="userNameLabel" destination="nVb-5q-JWl" id="omF-gn-m7W"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
