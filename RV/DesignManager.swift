@@ -12,21 +12,25 @@ class DesignManager: NSObject {
     
     static let sharedInstance = DesignManager()
     
-    let lightPurple = UIColor(hexString: "#BB51C4")
-    let lightGray = UIColor(hexString: "#CFD8DC")
+    let navyBlue = UIColor(hexString: "#2C3E50")
+    let flatRed = UIColor(hexString: "#E74C3C")
+    let flatWhite = UIColor(hexString: "#ECF0F1")
+    let cleanBlue = UIColor(hexString: "#3498DB")
+    let flatBlue = UIColor(hexString: "#2980B9")
+
     let username = "ubuntu"
     let password = "squareapp"
     
     override init() {
-//        var fontAttributes = [String : AnyObject]()
-//        let font = UIFont(name: "Lato-Bold", size: 17)
-//        fontAttributes = [NSFontAttributeName : font!, NSForegroundColorAttributeName : UIColor.white]
-//        
+        var fontAttributes = [String : AnyObject]()
+        let font = UIFont(name: "Quicksand-Medium", size: 17)
+        fontAttributes = [NSFontAttributeName : font!, NSForegroundColorAttributeName : flatWhite]
+//
 //        //UINavigationBar.appearance().setBackgroundImage(UIImage(named: "logo"), for: UIBarMetrics.default)
 //        UINavigationBar.appearance().isTranslucent = false
 //        //UIBarButtonItem.appearance().tintColor = UIColor.black
-//        UINavigationBar.appearance().titleTextAttributes = fontAttributes
-//        UIBarButtonItem.appearance().setTitleTextAttributes(fontAttributes, for: UIControlState.normal)
+        UINavigationBar.appearance().titleTextAttributes = fontAttributes
+        UIBarButtonItem.appearance().setTitleTextAttributes(fontAttributes, for: UIControlState.normal)
 //        UIApplication.shared.statusBarStyle = .default
     }
     

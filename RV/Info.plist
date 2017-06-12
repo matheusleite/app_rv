@@ -34,5 +34,12 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    <key>UIAppFonts</key>
+    <array>
+        <string>Quicksand-Bold.ttf</string>
+        <string>Quicksand-Light.ttf</string>
+        <string>Quicksand-Regular.ttf</string>
+        <string>Quicksand-Medium.ttf</string>
+    </array>
 </dict>
 </plist>

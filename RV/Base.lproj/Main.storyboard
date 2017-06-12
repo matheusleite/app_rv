@@ -76,9 +76,10 @@
             <objects>
                 <navigationController id="2AH-OH-AdS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Palavras" id="Pxw-Kd-3an"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ybR-6f-8eC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="ybR-6f-8eC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Cwr-tw-Bf1" kind="relationship" relationship="rootViewController" id="4Nz-hi-kwG"/>
@@ -92,10 +93,13 @@
         <scene sceneID="Rto-49-jlV">
             <objects>
                 <tabBarController id="FAV-Ua-Hqj" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Uso-N2-GSh">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Uso-N2-GSh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="2AH-OH-AdS" kind="relationship" relationship="viewControllers" id="Xnc-aQ-WBw"/>
@@ -117,21 +121,21 @@
                         <viewControllerLayoutGuide type="bottom" id="pIi-oJ-Kur"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WS1-2G-80Z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-tY-GvC">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="603" id="bMU-sR-bPy"/>
+                                    <constraint firstAttribute="height" constant="554" id="bMU-sR-bPy"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="preachCell" rowHeight="75" id="vEq-e8-Jzo" customClass="PreachCell" customModule="RV" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vEq-e8-Jzo" id="h3G-Vb-4mn">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEw-XZ-yTF">
@@ -178,7 +182,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7qM-pB-AlD">
-                                <rect key="frame" x="86" y="72" width="203" height="29"/>
+                                <rect key="frame" x="86" y="8" width="203" height="29"/>
                                 <segments>
                                     <segment title="Todas"/>
                                     <segment title="Minhas"/>
@@ -215,9 +219,10 @@
             <objects>
                 <navigationController id="bp7-Nr-JdG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Escala" id="1OM-jZ-SBo"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nk7-sJ-zLq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Nk7-sJ-zLq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="VK9-4W-eNE" kind="relationship" relationship="rootViewController" id="UeK-0u-wxb"/>
@@ -236,22 +241,11 @@
                         <viewControllerLayoutGuide type="bottom" id="izE-UL-ZR9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kg4-3S-tLM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UUU-FS-Uh3">
-                                <rect key="frame" x="16" y="72" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Tenda"/>
-                                    <segment title="Cozinha"/>
-                                    <segment title="Intercessão"/>
-                                    <segment title="Banheiros"/>
-                                </segments>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sHP-Bg-0Td">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sHP-Bg-0Td">
+                                <rect key="frame" x="0.0" y="44" width="375" height="560"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="L45-jL-Xt5">
@@ -264,8 +258,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UUU-FS-Uh3">
+                                <rect key="frame" x="16" y="8" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Tenda"/>
+                                    <segment title="Cozinha"/>
+                                    <segment title="Intercessão"/>
+                                    <segment title="Banheiros"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="sHP-Bg-0Td" secondAttribute="bottom" constant="-50" id="9i4-FU-cgW"/>
+                            <constraint firstItem="UUU-FS-Uh3" firstAttribute="centerX" secondItem="sHP-Bg-0Td" secondAttribute="centerX" id="Dm7-Ls-vWg"/>
+                            <constraint firstItem="UUU-FS-Uh3" firstAttribute="top" secondItem="jCl-b9-Hjy" secondAttribute="bottom" constant="8" symbolic="YES" id="FK2-Sy-TjT"/>
+                            <constraint firstItem="sHP-Bg-0Td" firstAttribute="leading" secondItem="kg4-3S-tLM" secondAttribute="leading" id="eEc-M7-avl"/>
+                            <constraint firstItem="UUU-FS-Uh3" firstAttribute="leading" secondItem="kg4-3S-tLM" secondAttribute="leadingMargin" id="l7S-r2-qtU"/>
+                            <constraint firstItem="sHP-Bg-0Td" firstAttribute="top" secondItem="UUU-FS-Uh3" secondAttribute="bottom" constant="8" symbolic="YES" id="qjI-h7-Hcf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Escalas" id="l1V-O5-xyX"/>
                 </viewController>
@@ -324,9 +335,10 @@
             <objects>
                 <navigationController id="fAv-OI-cRz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Funções" id="Jfh-08-egi"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fuq-cH-f3r">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="fuq-cH-f3r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="kTy-it-bdJ" kind="relationship" relationship="rootViewController" id="H7L-SR-cAy"/>
@@ -345,14 +357,14 @@
                         <viewControllerLayoutGuide type="bottom" id="9zh-Um-1qI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xtv-s3-LSe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kOS-ez-Lf2">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="603" id="jBP-Wa-fNi"/>
+                                    <constraint firstAttribute="height" constant="554" id="jBP-Wa-fNi"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="preachCell" rowHeight="75" id="x66-Ks-ZId" customClass="PreachCell" customModule="RV" customModuleProvider="target">
@@ -406,7 +418,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tys-Nj-CNz">
-                                <rect key="frame" x="86" y="72" width="203" height="29"/>
+                                <rect key="frame" x="86" y="8" width="203" height="29"/>
                                 <segments>
                                     <segment title="Todas"/>
                                     <segment title="Minhas"/>
@@ -437,16 +449,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVB-XS-bzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1596" y="1686"/>
+            <point key="canvasLocation" x="1596" y="1685.3073463268368"/>
         </scene>
         <!--Lista-->
         <scene sceneID="hqI-VT-95C">
             <objects>
                 <navigationController id="prX-E5-Hqz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Lista" id="CCA-l8-fhE"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v3j-QE-oyy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="v3j-QE-oyy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="gfo-U5-guK" kind="relationship" relationship="rootViewController" id="LH3-jo-hL8"/>
@@ -465,14 +478,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wCM-m4-yTo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="grc-7C-nct">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RPq-hf-URG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="603" id="0ch-1k-2nK"/>
+                                    <constraint firstAttribute="height" constant="554" id="0ch-1k-2nK"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="listCell" rowHeight="75" id="PSg-Zx-5En" customClass="PreachCell" customModule="RV" customModuleProvider="target">
@@ -514,7 +527,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Oq-ju-eCE">
-                                <rect key="frame" x="86" y="72" width="203" height="29"/>
+                                <rect key="frame" x="86" y="8" width="203" height="29"/>
                                 <segments>
                                     <segment title="Líderes"/>
                                     <segment title="Revisionistas"/>

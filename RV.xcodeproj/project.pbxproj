@@ -18,6 +18,10 @@
 		3C0F34241EDCE8F900D60AAE /* PreachingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F34231EDCE8F900D60AAE /* PreachingsViewController.swift */; };
 		3C0F34261EDCEE6800D60AAE /* PreachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F34251EDCEE6800D60AAE /* PreachCell.swift */; };
 		3C0F34281EDCF58D00D60AAE /* DesignManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F34271EDCF58D00D60AAE /* DesignManager.swift */; };
+		3C5A1F651EEF0C410024152E /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C5A1F611EEF0C410024152E /* Quicksand-Bold.ttf */; };
+		3C5A1F661EEF0C410024152E /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C5A1F621EEF0C410024152E /* Quicksand-Light.ttf */; };
+		3C5A1F671EEF0C410024152E /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C5A1F631EEF0C410024152E /* Quicksand-Medium.ttf */; };
+		3C5A1F681EEF0C410024152E /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C5A1F641EEF0C410024152E /* Quicksand-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		3C0F34231EDCE8F900D60AAE /* PreachingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreachingsViewController.swift; sourceTree = "<group>"; };
 		3C0F34251EDCEE6800D60AAE /* PreachCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreachCell.swift; sourceTree = "<group>"; };
 		3C0F34271EDCF58D00D60AAE /* DesignManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignManager.swift; sourceTree = "<group>"; };
+		3C5A1F611EEF0C410024152E /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		3C5A1F621EEF0C410024152E /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		3C5A1F631EEF0C410024152E /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
+		3C5A1F641EEF0C410024152E /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 				3C0F34231EDCE8F900D60AAE /* PreachingsViewController.swift */,
 				3C0F34251EDCEE6800D60AAE /* PreachCell.swift */,
 				3C0F34271EDCF58D00D60AAE /* DesignManager.swift */,
+				3C5A1F691EEF0C480024152E /* Fonts */,
 			);
 			path = RV;
 			sourceTree = "<group>";
@@ -135,6 +144,17 @@
 				3C0F34151EDCE1BC00D60AAE /* Info.plist */,
 			);
 			path = RVUITests;
+			sourceTree = "<group>";
+		};
+		3C5A1F691EEF0C480024152E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3C5A1F611EEF0C410024152E /* Quicksand-Bold.ttf */,
+				3C5A1F621EEF0C410024152E /* Quicksand-Light.ttf */,
+				3C5A1F631EEF0C410024152E /* Quicksand-Medium.ttf */,
+				3C5A1F641EEF0C410024152E /* Quicksand-Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +269,11 @@
 			files = (
 				3C0F33FE1EDCE1BC00D60AAE /* LaunchScreen.storyboard in Resources */,
 				3C0F33FB1EDCE1BC00D60AAE /* Assets.xcassets in Resources */,
+				3C5A1F681EEF0C410024152E /* Quicksand-Regular.ttf in Resources */,
 				3C0F33F91EDCE1BC00D60AAE /* Main.storyboard in Resources */,
+				3C5A1F651EEF0C410024152E /* Quicksand-Bold.ttf in Resources */,
+				3C5A1F661EEF0C410024152E /* Quicksand-Light.ttf in Resources */,
+				3C5A1F671EEF0C410024152E /* Quicksand-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +552,7 @@
 				3C0F341A1EDCE1BC00D60AAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C0F341B1EDCE1BC00D60AAE /* Build configuration list for PBXNativeTarget "RVTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +561,7 @@
 				3C0F341D1EDCE1BC00D60AAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C0F341E1EDCE1BC00D60AAE /* Build configuration list for PBXNativeTarget "RVUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +570,7 @@
 				3C0F34201EDCE1BC00D60AAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
