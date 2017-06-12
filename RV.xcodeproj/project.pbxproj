@@ -26,6 +26,8 @@
 		3C5A1F6D1EEF21060024152E /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1F6C1EEF21060024152E /* ScheduleTableViewCell.swift */; };
 		3C5A1F711EEF21520024152E /* FunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1F701EEF21520024152E /* FunctionsViewController.swift */; };
 		3C5A1F731EEF215D0024152E /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1F721EEF215D0024152E /* ScheduleViewController.swift */; };
+		3C5A1F751EEF3AE80024152E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1F741EEF3AE80024152E /* ListViewController.swift */; };
+		3C5A1F771EEF3AF80024152E /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1F761EEF3AF80024152E /* ListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		3C5A1F6C1EEF21060024152E /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		3C5A1F701EEF21520024152E /* FunctionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionsViewController.swift; sourceTree = "<group>"; };
 		3C5A1F721EEF215D0024152E /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		3C5A1F741EEF3AE80024152E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		3C5A1F761EEF3AF80024152E /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +130,11 @@
 				3C0F33F71EDCE1BC00D60AAE /* Main.storyboard */,
 				3C0F34211EDCE6AD00D60AAE /* LoginViewController.swift */,
 				3C0F34231EDCE8F900D60AAE /* PreachingsViewController.swift */,
-				3C5A1F6E1EEF21160024152E /* Custom Cells */,
-				3C5A1F6F1EEF212B0024152E /* Resources */,
 				3C5A1F701EEF21520024152E /* FunctionsViewController.swift */,
 				3C5A1F721EEF215D0024152E /* ScheduleViewController.swift */,
+				3C5A1F741EEF3AE80024152E /* ListViewController.swift */,
+				3C5A1F6E1EEF21160024152E /* Custom Cells */,
+				3C5A1F6F1EEF212B0024152E /* Resources */,
 			);
 			path = RV;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				3C0F34251EDCEE6800D60AAE /* PreachCell.swift */,
 				3C5A1F6A1EEF20FD0024152E /* FunctionsTableViewCell.swift */,
 				3C5A1F6C1EEF21060024152E /* ScheduleTableViewCell.swift */,
+				3C5A1F761EEF3AF80024152E /* ListTableViewCell.swift */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -331,6 +337,8 @@
 				3C0F34281EDCF58D00D60AAE /* DesignManager.swift in Sources */,
 				3C0F34241EDCE8F900D60AAE /* PreachingsViewController.swift in Sources */,
 				3C0F34221EDCE6AD00D60AAE /* LoginViewController.swift in Sources */,
+				3C5A1F771EEF3AF80024152E /* ListTableViewCell.swift in Sources */,
+				3C5A1F751EEF3AE80024152E /* ListViewController.swift in Sources */,
 				3C5A1F731EEF215D0024152E /* ScheduleViewController.swift in Sources */,
 				3C0F33F61EDCE1BC00D60AAE /* ViewController.swift in Sources */,
 				3C5A1F711EEF21520024152E /* FunctionsViewController.swift in Sources */,

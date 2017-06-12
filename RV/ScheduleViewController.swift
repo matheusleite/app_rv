@@ -8,28 +8,74 @@
 
 import UIKit
 
+struct Event {
+    var type : RVType!
+    var user : User!
+    var function : String!
+    var time : String!
+}
+
 class ScheduleViewController: UIViewController {
 
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
+    var data = [Event]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        tableView.delegate = self
+        tableView.dataSource = self
+        loadData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func segmentChanged(_ sender: Any) {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            //all preachs
+            data.removeAll()
+            loadData()
+        } else {
+            //only my preachs
+            var aux = [Event]()
+            aux = data.filter({ ($0.user.name == "Ms. Pedro Zanini")})
+            data = aux
+            tableView.reloadData()
+        }
     }
-    */
+    
+    func loadData() {
+//        let u1 = User(name: "Ms. Pedro Zanini", email: "pedrovzg@gmail.com")
+//        let u2 = User(name: "Bp. Raphael Assunção", email: "bprapha@gmail.com")
+//        
+//        let obj1 = Event(type: RVType.MAN_U20, user: u1, function: "Coordenação de Tenda")
+//        let obj2 = Event(type: RVType.MAN_U20, user: u2, function: <#T##String!#>, time: <#T##String!#>)
+//        
+//        data.append(obj1)
+//        data.append(obj2)
+//        tableView.reloadData()
+    }
 
+}
+
+extension ScheduleViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as! FunctionsTableViewCell
+        
+        cell.functionLabel.text = data[indexPath.row].function
+        cell.userNameLabel.text = data[indexPath.row].user.name
+        
+        return cell
+        
+    }
+}
+
+extension ScheduleViewController : UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
 }

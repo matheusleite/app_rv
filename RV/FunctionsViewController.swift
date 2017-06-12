@@ -52,11 +52,12 @@ class FunctionsViewController: UIViewController {
         let u1 = User(name: "Ms. Pedro Zanini", email: "pedrovzg@gmail.com")
         let u2 = User(name: "Bp. Raphael Assunção", email: "bprapha@gmail.com")
         
-        var obj1 = Function(type: RVType.MAN_U20, user: u1, function: "Coordenação de Tenda")
-        var obj2 = Function(type: RVType.MAN_U20, user: u2, function: "Supervisão Revisão")
+        let obj1 = Function(type: RVType.MAN_U20, user: u1, function: "Coordenação de Tenda")
+        let obj2 = Function(type: RVType.MAN_U20, user: u2, function: "Supervisão Revisão")
         
         data.append(obj1)
         data.append(obj2)
+        tableView.reloadData()
     }
     
 }
