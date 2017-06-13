@@ -16,24 +16,49 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func segmentChanged(_ sender: Any) {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            //all preachs
+            data.removeAll()
+            loadData()
+        } else {
+            //only my preachs
+            var aux = [Function]()
+            aux = data.filter({ ($0.user.name == "Ms. Pedro Zanini")})
+            data = aux
+            tableView.reloadData()
+        }
     }
     
+    func loadData() {}
 
-    /*
-    // MARK: - Navigation
+    
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ListViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
+        
+//        cell.functionLabel.text = data[indexPath.row].function
+//        cell.userNameLabel.text = data[indexPath.row].user.name
+        
+        return cell
+        
     }
-    */
+}
 
+extension ListViewController : UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
 }

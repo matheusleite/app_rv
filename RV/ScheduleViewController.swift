@@ -58,10 +58,10 @@ class ScheduleViewController: UIViewController {
 
 extension ScheduleViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as! FunctionsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as! ScheduleTableViewCell
         
-        cell.functionLabel.text = data[indexPath.row].function
-        cell.userNameLabel.text = data[indexPath.row].user.name
+//        cell.functionLabel.text = data[indexPath.row].function
+//        cell.userNameLabel.text = data[indexPath.row].user.name
         
         return cell
         
