@@ -6,6 +6,7 @@
 //  Copyright © 2017 Wavez. All rights reserved.
 //
 
+//estruturas simples para criar dados fake
 struct User {
     var name : String!
     var email : String!
@@ -24,7 +25,7 @@ class PreachingsViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    var data = [Preach]()
+    var data = [Preach]() //array onde ficará os dados fake e alimentará a tableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class PreachingsViewController: UIViewController {
         loadData()
     }
     
+    //esse metodo carrega os dados fake
     func loadData () {
         let u1 = User(name: "Ms. Pedro Zanini", email: "pedrovzg@gmail.com")
         let u2 = User(name: "Bp. Raphael Assunção", email: "bprapha@gmail.com")
@@ -52,14 +54,18 @@ class PreachingsViewController: UIViewController {
     
     @IBAction func segmentChanged(_ sender: Any) {
         if segmentedControl.selectedSegmentIndex == 0 {
-            //all preachs
+            //limpo o array
             data.removeAll()
+            
+            //recarregando dados
             loadData()
         } else {
-            //only my preachs
+            //filtrando array
             var aux = [Preach]()
             aux = data.filter({ ($0.user.name == "Ms. Pedro Zanini")})
             data = aux
+            
+            //reload na table view
             tableView.reloadData()
         }
     }
@@ -71,6 +77,8 @@ extension PreachingsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "preachCell", for: indexPath) as! PreachCell
         
+        
+        //alimentando a celula atraves dos dados do array
         cell.time.text = data[indexPath.row].time
         cell.userName.text = data[indexPath.row].user.name
         cell.title.text = data[indexPath.row].description
@@ -82,10 +90,12 @@ extension PreachingsViewController : UITableViewDelegate {
 
 extension PreachingsViewController : UITableViewDataSource {
     
+    //numero de seções da table
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
+    //numero de linhas da table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }

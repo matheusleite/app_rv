@@ -17,9 +17,6 @@ class DesignManager: NSObject {
     let flatWhite = UIColor(hexString: "#ECF0F1")
     let cleanBlue = UIColor(hexString: "#3498DB")
     let flatBlue = UIColor(hexString: "#2980B9")
-
-    let username = "ubuntu"
-    let password = "squareapp"
     
     override init() {
         var fontAttributes = [String : AnyObject]()
