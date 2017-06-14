@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38FCF83B1EF10CFE00F57F0C /* lider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCF8341EF10CFE00F57F0C /* lider.swift */; };
+		38FCF83C1EF10CFE00F57F0C /* revisionista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCF8351EF10CFE00F57F0C /* revisionista.swift */; };
+		38FCF83D1EF10CFE00F57F0C /* revisao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCF8361EF10CFE00F57F0C /* revisao.swift */; };
+		38FCF83E1EF10CFE00F57F0C /* palavra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCF8371EF10CFE00F57F0C /* palavra.swift */; };
+		38FCF83F1EF10CFE00F57F0C /* funcao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCF8381EF10CFE00F57F0C /* funcao.swift */; };
+		38FCF8401EF10CFE00F57F0C /* equipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCF8391EF10CFE00F57F0C /* equipe.swift */; };
+		38FCF8411EF10CFE00F57F0C /* escala.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FCF83A1EF10CFE00F57F0C /* escala.swift */; };
 		3C0F33F41EDCE1BC00D60AAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F33F31EDCE1BC00D60AAE /* AppDelegate.swift */; };
 		3C0F33F61EDCE1BC00D60AAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0F33F51EDCE1BC00D60AAE /* ViewController.swift */; };
 		3C0F33F91EDCE1BC00D60AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0F33F71EDCE1BC00D60AAE /* Main.storyboard */; };
@@ -58,6 +65,13 @@
 		144DF57628CB1F5619003E17 /* Pods-RVUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RVUITests/Pods-RVUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		30A35273F1F99448BD5EF740 /* Pods-RV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RV/Pods-RV.debug.xcconfig"; sourceTree = "<group>"; };
 		383798D6400515FA6A874902 /* Pods-RVUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RVUITests/Pods-RVUITests.release.xcconfig"; sourceTree = "<group>"; };
+		38FCF8341EF10CFE00F57F0C /* lider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lider.swift; sourceTree = "<group>"; };
+		38FCF8351EF10CFE00F57F0C /* revisionista.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = revisionista.swift; sourceTree = "<group>"; };
+		38FCF8361EF10CFE00F57F0C /* revisao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = revisao.swift; sourceTree = "<group>"; };
+		38FCF8371EF10CFE00F57F0C /* palavra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = palavra.swift; sourceTree = "<group>"; };
+		38FCF8381EF10CFE00F57F0C /* funcao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = funcao.swift; sourceTree = "<group>"; };
+		38FCF8391EF10CFE00F57F0C /* equipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = equipe.swift; sourceTree = "<group>"; };
+		38FCF83A1EF10CFE00F57F0C /* escala.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = escala.swift; sourceTree = "<group>"; };
 		3C0F33F01EDCE1BC00D60AAE /* RV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0F33F31EDCE1BC00D60AAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C0F33F51EDCE1BC00D60AAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +162,13 @@
 		3C0F33F21EDCE1BC00D60AAE /* RV */ = {
 			isa = PBXGroup;
 			children = (
+				38FCF8341EF10CFE00F57F0C /* lider.swift */,
+				38FCF8351EF10CFE00F57F0C /* revisionista.swift */,
+				38FCF8361EF10CFE00F57F0C /* revisao.swift */,
+				38FCF8371EF10CFE00F57F0C /* palavra.swift */,
+				38FCF8381EF10CFE00F57F0C /* funcao.swift */,
+				38FCF8391EF10CFE00F57F0C /* equipe.swift */,
+				38FCF83A1EF10CFE00F57F0C /* escala.swift */,
 				3C0F33F31EDCE1BC00D60AAE /* AppDelegate.swift */,
 				3C0F33F51EDCE1BC00D60AAE /* ViewController.swift */,
 				3C0F33F71EDCE1BC00D60AAE /* Main.storyboard */,
@@ -529,19 +550,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38FCF83D1EF10CFE00F57F0C /* revisao.swift in Sources */,
 				3CA7FEF91EF1043E00F54219 /* PreachDetailViewController.swift in Sources */,
 				3C5A1F6B1EEF20FD0024152E /* FunctionsTableViewCell.swift in Sources */,
+				38FCF83E1EF10CFE00F57F0C /* palavra.swift in Sources */,
 				3C0F34261EDCEE6800D60AAE /* PreachCell.swift in Sources */,
 				3C0F34281EDCF58D00D60AAE /* DesignManager.swift in Sources */,
 				3C0F34241EDCE8F900D60AAE /* PreachingsViewController.swift in Sources */,
 				3C0F34221EDCE6AD00D60AAE /* LoginViewController.swift in Sources */,
+				38FCF83F1EF10CFE00F57F0C /* funcao.swift in Sources */,
 				3C5A1F771EEF3AF80024152E /* ListTableViewCell.swift in Sources */,
 				3C5A1F751EEF3AE80024152E /* ListViewController.swift in Sources */,
 				3C5A1F731EEF215D0024152E /* ScheduleViewController.swift in Sources */,
+				38FCF8401EF10CFE00F57F0C /* equipe.swift in Sources */,
 				3C5A1F791EEF78EF0024152E /* FilterTableViewController.swift in Sources */,
 				3C0F33F61EDCE1BC00D60AAE /* ViewController.swift in Sources */,
 				3C5A1F711EEF21520024152E /* FunctionsViewController.swift in Sources */,
+				38FCF83B1EF10CFE00F57F0C /* lider.swift in Sources */,
+				38FCF83C1EF10CFE00F57F0C /* revisionista.swift in Sources */,
 				3C5A1F6D1EEF21060024152E /* ScheduleTableViewCell.swift in Sources */,
+				38FCF8411EF10CFE00F57F0C /* escala.swift in Sources */,
 				3C0F33F41EDCE1BC00D60AAE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
