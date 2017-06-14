@@ -12,10 +12,10 @@ import FirebaseDatabase
 class ScheduleDetailViewController: UIViewController {
 
     let ref = Database.database().reference()
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var durationField: UITextField!
+    @IBOutlet weak var userField: UITextField!
+    @IBOutlet weak var typeField: UITextField!
     @IBOutlet weak var timeField: UITextField!
-    @IBOutlet weak var preacherField: UITextField!
+    @IBOutlet weak var revisaoField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +23,9 @@ class ScheduleDetailViewController: UIViewController {
     }
     
     @IBAction func submit(_ sender: Any) {
-        self.ref.child("preaches").childByAutoId().setValue(["name": nameField.text!, "duration" : durationField.text!, "time" : timeField.text!, "preacher" : preacherField.text!])
+        self.ref.child("scales").childByAutoId().setValue(["user": userField.text!, "type" : typeField.text!, "time" : timeField.text!, "revisao" : revisaoField.text!])
         
-        let alert = UIAlertController(title: "Pronto!", message: "Sua pregação foi cadastrada.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Pronto!", message: "Sua escala foi cadastrada.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK!", style: .cancel, handler: { (action) in
             self.close()
         }))

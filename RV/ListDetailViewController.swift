@@ -13,7 +13,7 @@ class ListDetailViewController: UIViewController {
 
     let ref = Database.database().reference()
     @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var durationField: UITextField!
+    @IBOutlet weak var equipeField: UITextField!
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var preacherField: UITextField!
     
