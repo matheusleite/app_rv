@@ -52,6 +52,12 @@ class PreachingsViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func filter(_ sender: Any) {
+        
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "filterVC")
+        present(nav, animated: true, completion: nil)
+        
+    }
     @IBAction func segmentChanged(_ sender: Any) {
         if segmentedControl.selectedSegmentIndex == 0 {
             //limpo o array
