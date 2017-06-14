@@ -225,7 +225,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEw-XZ-yTF">
-                                                    <rect key="frame" x="15" y="27.5" width="53" height="21.5"/>
+                                                    <rect key="frame" x="15" y="26.5" width="53" height="21.5"/>
                                                     <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -411,7 +411,7 @@
                     <connections>
                         <outlet property="durationField" destination="DcR-dq-EDZ" id="2rm-o4-Cgj"/>
                         <outlet property="nameField" destination="MkQ-Au-T7l" id="FiY-aK-R4D"/>
-                        <outlet property="preacherField" destination="5Yd-7a-aCg" id="RXL-eI-ouQ"/>
+                        <outlet property="preacherField" destination="5Yd-7a-aCg" id="WkW-n2-qlp"/>
                         <outlet property="timeField" destination="JfV-EC-hG9" id="BRk-uE-HQ5"/>
                     </connections>
                 </viewController>
@@ -800,9 +800,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kOS-ez-Lf2">
                                 <rect key="frame" x="0.0" y="44" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="559" id="jBP-Wa-fNi"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="funcCell" rowHeight="75" id="3Rb-ds-smq" customClass="FunctionsTableViewCell" customModule="RV" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
@@ -862,13 +859,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tys-Nj-CNz" firstAttribute="leading" secondItem="Xtv-s3-LSe" secondAttribute="leadingMargin" constant="70" id="IPg-sh-Xyg"/>
-                            <constraint firstItem="tys-Nj-CNz" firstAttribute="top" secondItem="hiM-jk-P20" secondAttribute="bottom" constant="8" symbolic="YES" id="ZGn-Hk-xoz"/>
-                            <constraint firstAttribute="bottom" secondItem="kOS-ez-Lf2" secondAttribute="bottom" id="Zrg-Qx-e4g"/>
-                            <constraint firstItem="kOS-ez-Lf2" firstAttribute="leading" secondItem="Xtv-s3-LSe" secondAttribute="leading" id="cSE-us-0bq"/>
-                            <constraint firstItem="tys-Nj-CNz" firstAttribute="centerX" secondItem="kOS-ez-Lf2" secondAttribute="centerX" id="g4e-Wd-R7f"/>
-                            <constraint firstItem="kOS-ez-Lf2" firstAttribute="top" secondItem="tys-Nj-CNz" secondAttribute="bottom" constant="8" id="r20-OF-0fS"/>
-                            <constraint firstAttribute="trailing" secondItem="kOS-ez-Lf2" secondAttribute="trailing" id="wPU-fb-ubC"/>
+                            <constraint firstAttribute="trailing" secondItem="kOS-ez-Lf2" secondAttribute="trailing" id="0tg-Ae-PPs"/>
+                            <constraint firstAttribute="bottom" secondItem="kOS-ez-Lf2" secondAttribute="bottom" id="376-SJ-9jd"/>
+                            <constraint firstItem="tys-Nj-CNz" firstAttribute="leading" secondItem="Xtv-s3-LSe" secondAttribute="leadingMargin" constant="70" id="7to-ch-AfS"/>
+                            <constraint firstItem="kOS-ez-Lf2" firstAttribute="leading" secondItem="Xtv-s3-LSe" secondAttribute="leading" id="TEq-N5-wKf"/>
+                            <constraint firstItem="kOS-ez-Lf2" firstAttribute="top" secondItem="tys-Nj-CNz" secondAttribute="bottom" constant="8" symbolic="YES" id="dcH-Uo-XXP"/>
+                            <constraint firstItem="tys-Nj-CNz" firstAttribute="top" secondItem="hiM-jk-P20" secondAttribute="bottom" constant="8" symbolic="YES" id="iJH-Rk-5Fc"/>
+                            <constraint firstItem="tys-Nj-CNz" firstAttribute="centerX" secondItem="kOS-ez-Lf2" secondAttribute="centerX" id="lf9-X7-6k6"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -1143,15 +1140,85 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jN7-CC-yvB">
-                                <rect key="frame" x="16" y="63" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Usuário ou Equipe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jN7-CC-yvB">
+                                <rect key="frame" x="16" y="60" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="O7i-Rl-e3W"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tipo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TSd-pf-7WO">
+                                <rect key="frame" x="16" y="120" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="feo-m1-58q"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Horário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0W-6n-h6u">
+                                <rect key="frame" x="16" y="180" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ksw-CO-OPf"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Revisão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="riU-Qt-18H">
+                                <rect key="frame" x="16" y="240" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dYi-Mj-Wvz"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3c-1X-LXb">
+                                <rect key="frame" x="16" y="342" width="343" height="42"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="17"/>
+                                <state key="normal" title="Adicionar">
+                                    <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="0.99667292829999998" blue="0.98753482100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signIn:" destination="n6P-vw-lZR" eventType="touchUpInside" id="Xit-7D-X91"/>
+                                    <action selector="submit:" destination="o9U-Ty-x5H" eventType="touchUpInside" id="YDn-qz-aj2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="riU-Qt-18H" firstAttribute="trailing" secondItem="m3c-1X-LXb" secondAttribute="trailing" id="2Q4-ni-Qkr"/>
+                            <constraint firstItem="TSd-pf-7WO" firstAttribute="top" secondItem="jN7-CC-yvB" secondAttribute="bottom" constant="20" id="2oL-bA-XVn"/>
+                            <constraint firstItem="TSd-pf-7WO" firstAttribute="leading" secondItem="b0W-6n-h6u" secondAttribute="leading" id="7hf-e1-leF"/>
+                            <constraint firstItem="jN7-CC-yvB" firstAttribute="top" secondItem="a9A-4w-jtI" secondAttribute="bottom" constant="60" id="E9l-DI-1kz"/>
+                            <constraint firstItem="SVK-RF-fea" firstAttribute="top" secondItem="m3c-1X-LXb" secondAttribute="bottom" constant="175" id="Ijo-em-Mhs"/>
+                            <constraint firstItem="jN7-CC-yvB" firstAttribute="trailing" secondItem="APP-eY-YLF" secondAttribute="trailingMargin" id="NUv-IQ-Cgs"/>
+                            <constraint firstItem="riU-Qt-18H" firstAttribute="leading" secondItem="m3c-1X-LXb" secondAttribute="leading" id="OY4-E6-y47"/>
+                            <constraint firstItem="b0W-6n-h6u" firstAttribute="top" secondItem="TSd-pf-7WO" secondAttribute="bottom" constant="20" id="RPq-6R-SX0"/>
+                            <constraint firstItem="b0W-6n-h6u" firstAttribute="leading" secondItem="riU-Qt-18H" secondAttribute="leading" id="VDb-J7-lCW"/>
+                            <constraint firstItem="jN7-CC-yvB" firstAttribute="leading" secondItem="TSd-pf-7WO" secondAttribute="leading" id="WDb-A1-0EG"/>
+                            <constraint firstItem="m3c-1X-LXb" firstAttribute="top" secondItem="riU-Qt-18H" secondAttribute="bottom" constant="62" id="XGy-gz-xCE"/>
+                            <constraint firstItem="b0W-6n-h6u" firstAttribute="trailing" secondItem="riU-Qt-18H" secondAttribute="trailing" id="brL-Mc-TJX"/>
+                            <constraint firstItem="jN7-CC-yvB" firstAttribute="leading" secondItem="APP-eY-YLF" secondAttribute="leadingMargin" id="bs1-0Y-VTJ"/>
+                            <constraint firstItem="TSd-pf-7WO" firstAttribute="trailing" secondItem="b0W-6n-h6u" secondAttribute="trailing" id="d0G-1N-mRf"/>
+                            <constraint firstItem="jN7-CC-yvB" firstAttribute="trailing" secondItem="TSd-pf-7WO" secondAttribute="trailing" id="g8z-4I-La3"/>
+                            <constraint firstItem="riU-Qt-18H" firstAttribute="top" secondItem="b0W-6n-h6u" secondAttribute="bottom" constant="20" id="s28-Fu-sba"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dom-pg-pGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1170,13 +1237,51 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6RS-qN-Kd2">
-                                <rect key="frame" x="16" y="63" width="343" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome da Função" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6RS-qN-Kd2">
+                                <rect key="frame" x="16" y="60" width="343" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Revisão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rcM-dp-JsW">
+                                <rect key="frame" x="16" y="120" width="343" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PML-22-ICD">
+                                <rect key="frame" x="16" y="180" width="343" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCZ-zr-eGn">
+                                <rect key="frame" x="16" y="280" width="343" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="17"/>
+                                <state key="normal" title="Adicionar">
+                                    <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="0.99667292829999998" blue="0.98753482100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signIn:" destination="n6P-vw-lZR" eventType="touchUpInside" id="3uo-Z8-YbK"/>
+                                    <action selector="submit:" destination="o9U-Ty-x5H" eventType="touchUpInside" id="R3S-KI-cUx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1198,12 +1303,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rYo-Cq-Ycn">
-                                <rect key="frame" x="16" y="63" width="343" height="40"/>
+                                <rect key="frame" x="16" y="60" width="343" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Equipe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMy-Em-v95">
+                                <rect key="frame" x="16" y="120" width="343" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Quarto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUo-Fh-aU2">
+                                <rect key="frame" x="16" y="180" width="343" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YP3-Aa-rqf">
+                                <rect key="frame" x="16" y="280" width="343" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="17"/>
+                                <state key="normal" title="Adicionar">
+                                    <color key="titleColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="0.99667292829999998" blue="0.98753482100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signIn:" destination="n6P-vw-lZR" eventType="touchUpInside" id="w6e-oK-KTI"/>
+                                    <action selector="submit:" destination="o9U-Ty-x5H" eventType="touchUpInside" id="BnQ-v4-WCs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

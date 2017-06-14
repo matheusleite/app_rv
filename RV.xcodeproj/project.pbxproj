@@ -38,6 +38,9 @@
 		3C5A1F791EEF78EF0024152E /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A1F781EEF78EF0024152E /* FilterTableViewController.swift */; };
 		3CA7FEF71EF0F7A800F54219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CA7FEF61EF0F7A800F54219 /* GoogleService-Info.plist */; };
 		3CA7FEF91EF1043E00F54219 /* PreachDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7FEF81EF1043E00F54219 /* PreachDetailViewController.swift */; };
+		3CA7FEFD1EF117FF00F54219 /* ScheduleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7FEFC1EF117FF00F54219 /* ScheduleDetailViewController.swift */; };
+		3CA7FEFF1EF1186300F54219 /* FunctionsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7FEFE1EF1186300F54219 /* FunctionsDetailViewController.swift */; };
+		3CA7FF011EF118B900F54219 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7FF001EF118B900F54219 /* ListDetailViewController.swift */; };
 		4CBC022D97FCD8F3129955A3 /* Pods_RVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F6FF686AF80BD3BFB4956A /* Pods_RVTests.framework */; };
 		704ED43D368871A30FE37470 /* Pods_RVUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121D89810E859ABBEB368BCC /* Pods_RVUITests.framework */; };
 		CD29E185FCBF543238FE91BE /* Pods_RV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8104B8C7B082304BCA42361 /* Pods_RV.framework */; };
@@ -102,6 +105,9 @@
 		3C5A1F781EEF78EF0024152E /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		3CA7FEF61EF0F7A800F54219 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3CA7FEF81EF1043E00F54219 /* PreachDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreachDetailViewController.swift; sourceTree = "<group>"; };
+		3CA7FEFC1EF117FF00F54219 /* ScheduleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailViewController.swift; sourceTree = "<group>"; };
+		3CA7FEFE1EF1186300F54219 /* FunctionsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionsDetailViewController.swift; sourceTree = "<group>"; };
+		3CA7FF001EF118B900F54219 /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		45B1DE4C06A230E21EB11348 /* Pods-RVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RVTests/Pods-RVTests.release.xcconfig"; sourceTree = "<group>"; };
 		66F6FF686AF80BD3BFB4956A /* Pods_RVTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RVTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		993BB15E464B8301B402FDAE /* Pods-RVTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RVTests/Pods-RVTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,23 +168,11 @@
 		3C0F33F21EDCE1BC00D60AAE /* RV */ = {
 			isa = PBXGroup;
 			children = (
-				38FCF8341EF10CFE00F57F0C /* lider.swift */,
-				38FCF8351EF10CFE00F57F0C /* revisionista.swift */,
-				38FCF8361EF10CFE00F57F0C /* revisao.swift */,
-				38FCF8371EF10CFE00F57F0C /* palavra.swift */,
-				38FCF8381EF10CFE00F57F0C /* funcao.swift */,
-				38FCF8391EF10CFE00F57F0C /* equipe.swift */,
-				38FCF83A1EF10CFE00F57F0C /* escala.swift */,
+				3CA7FEFA1EF10FC200F54219 /* Models */,
 				3C0F33F31EDCE1BC00D60AAE /* AppDelegate.swift */,
 				3C0F33F51EDCE1BC00D60AAE /* ViewController.swift */,
 				3C0F33F71EDCE1BC00D60AAE /* Main.storyboard */,
-				3C0F34211EDCE6AD00D60AAE /* LoginViewController.swift */,
-				3C0F34231EDCE8F900D60AAE /* PreachingsViewController.swift */,
-				3CA7FEF81EF1043E00F54219 /* PreachDetailViewController.swift */,
-				3C5A1F721EEF215D0024152E /* ScheduleViewController.swift */,
-				3C5A1F701EEF21520024152E /* FunctionsViewController.swift */,
-				3C5A1F741EEF3AE80024152E /* ListViewController.swift */,
-				3C5A1F781EEF78EF0024152E /* FilterTableViewController.swift */,
+				3CA7FEFB1EF10FCD00F54219 /* ViewControllers */,
 				3C5A1F6E1EEF21160024152E /* Custom Cells */,
 				3C5A1F6F1EEF212B0024152E /* Resources */,
 			);
@@ -236,6 +230,37 @@
 				3C5A1F691EEF0C480024152E /* Fonts */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		3CA7FEFA1EF10FC200F54219 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				38FCF8341EF10CFE00F57F0C /* lider.swift */,
+				38FCF8351EF10CFE00F57F0C /* revisionista.swift */,
+				38FCF8361EF10CFE00F57F0C /* revisao.swift */,
+				38FCF8371EF10CFE00F57F0C /* palavra.swift */,
+				38FCF8381EF10CFE00F57F0C /* funcao.swift */,
+				38FCF8391EF10CFE00F57F0C /* equipe.swift */,
+				38FCF83A1EF10CFE00F57F0C /* escala.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3CA7FEFB1EF10FCD00F54219 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3C0F34211EDCE6AD00D60AAE /* LoginViewController.swift */,
+				3C0F34231EDCE8F900D60AAE /* PreachingsViewController.swift */,
+				3CA7FEF81EF1043E00F54219 /* PreachDetailViewController.swift */,
+				3C5A1F721EEF215D0024152E /* ScheduleViewController.swift */,
+				3CA7FEFC1EF117FF00F54219 /* ScheduleDetailViewController.swift */,
+				3C5A1F701EEF21520024152E /* FunctionsViewController.swift */,
+				3CA7FEFE1EF1186300F54219 /* FunctionsDetailViewController.swift */,
+				3C5A1F741EEF3AE80024152E /* ListViewController.swift */,
+				3C5A1F781EEF78EF0024152E /* FilterTableViewController.swift */,
+				3CA7FF001EF118B900F54219 /* ListDetailViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		8249D1F12AB9089A00162EA9 /* Pods */ = {
@@ -562,13 +587,16 @@
 				3C5A1F771EEF3AF80024152E /* ListTableViewCell.swift in Sources */,
 				3C5A1F751EEF3AE80024152E /* ListViewController.swift in Sources */,
 				3C5A1F731EEF215D0024152E /* ScheduleViewController.swift in Sources */,
+				3CA7FEFD1EF117FF00F54219 /* ScheduleDetailViewController.swift in Sources */,
 				38FCF8401EF10CFE00F57F0C /* equipe.swift in Sources */,
 				3C5A1F791EEF78EF0024152E /* FilterTableViewController.swift in Sources */,
+				3CA7FF011EF118B900F54219 /* ListDetailViewController.swift in Sources */,
 				3C0F33F61EDCE1BC00D60AAE /* ViewController.swift in Sources */,
 				3C5A1F711EEF21520024152E /* FunctionsViewController.swift in Sources */,
 				38FCF83B1EF10CFE00F57F0C /* lider.swift in Sources */,
 				38FCF83C1EF10CFE00F57F0C /* revisionista.swift in Sources */,
 				3C5A1F6D1EEF21060024152E /* ScheduleTableViewCell.swift in Sources */,
+				3CA7FEFF1EF1186300F54219 /* FunctionsDetailViewController.swift in Sources */,
 				38FCF8411EF10CFE00F57F0C /* escala.swift in Sources */,
 				3C0F33F41EDCE1BC00D60AAE /* AppDelegate.swift in Sources */,
 			);
