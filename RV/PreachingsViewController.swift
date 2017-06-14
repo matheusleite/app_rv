@@ -20,12 +20,14 @@ struct Preach {
 
 
 import UIKit
+import FirebaseDatabase
 
 class PreachingsViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    var data = [Preach]() //array onde ficará os dados fake e alimentará a tableView
+    var data = [palavra]() //array onde ficará os dados fake e alimentará a tableView
+    let ref = Database.database().reference().child("preaches")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,20 +38,17 @@ class PreachingsViewController: UIViewController {
     
     //esse metodo carrega os dados fake
     func loadData () {
-        let u1 = User(name: "Ms. Pedro Zanini", email: "pedrovzg@gmail.com")
-        let u2 = User(name: "Bp. Raphael Assunção", email: "bprapha@gmail.com")
-        
-        let p1 = Preach(description: "Bom dia, o que desejas?", user: u1, time: "08:30")
-        let p2 = Preach(description: "A Bíblia", user: u2, time: "10:10")
-        let p3 = Preach(description: "O Verdadeiro Herói", user: u1, time: "10:50")
-        let p4 = Preach(description: "Perdão e Família", user: u1, time: "17:00")
-        
-        data.append(p1)
-        data.append(p2)
-        data.append(p3)
-        data.append(p4)
-        
-        tableView.reloadData()
+        self.ref.observe(.childAdded, with: { (snapshot) -> Void in
+            let userData = snapshot.value as! Dictionary<String, AnyObject>
+            print(userData["preacher"] as! String!)
+            let preach = palavra(id_palavra: snapshot.key,
+                                 id_revisao: "1",
+                                 id_lider: userData["preacher"] as! String!,
+                                 nome: userData["preacher"] as! String!,
+                                 horario: userData["time"] as! String!, duracao: userData["duration"] as! String!)
+            self.data.append(preach)
+            self.tableView.reloadData()
+        })
     }
     
     @IBAction func filter(_ sender: Any) {
@@ -67,9 +66,9 @@ class PreachingsViewController: UIViewController {
             loadData()
         } else {
             //filtrando array
-            var aux = [Preach]()
-            aux = data.filter({ ($0.user.name == "Ms. Pedro Zanini")})
-            data = aux
+//            var aux = [Preach]()
+//            aux = data.filter({ ($0.user.name == "Ms. Pedro Zanini")})
+//            data = aux
             
             //reload na table view
             tableView.reloadData()
@@ -85,9 +84,9 @@ extension PreachingsViewController : UITableViewDelegate {
         
         
         //alimentando a celula atraves dos dados do array
-        cell.time.text = data[indexPath.row].time
-        cell.userName.text = data[indexPath.row].user.name
-        cell.title.text = data[indexPath.row].description
+        cell.time.text = data[indexPath.row].horario
+        cell.userName.text = data[indexPath.row].nome
+        cell.title.text = data[indexPath.row].horario
         
         return cell
         

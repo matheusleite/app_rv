@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 enum RVType {
     case WOMAN_U21 //womens under 20 years old
@@ -25,7 +26,8 @@ class FunctionsViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    var data = [Function]()
+    var data = [funcao]()
+    let ref = Database.database().reference().child("functions")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,23 +43,24 @@ class FunctionsViewController: UIViewController {
             loadData()
         } else {
             //only my preachs
-            var aux = [Function]()
-            aux = data.filter({ ($0.user.name == "Ms. Pedro Zanini")})
-            data = aux
+//            var aux = [Function]()
+//            aux = data.filter({ ($0.user.name == "Ms. Pedro Zanini")})
+//            data = aux
             tableView.reloadData()
         }
     }
     
     func loadData() {
-        let u1 = User(name: "Ms. Pedro Zanini", email: "pedrovzg@gmail.com")
-        let u2 = User(name: "Bp. Raphael Assunção", email: "bprapha@gmail.com")
-        
-        let obj1 = Function(type: RVType.MAN_U21, user: u1, function: "Coordenação de Tenda")
-        let obj2 = Function(type: RVType.MAN_U21, user: u2, function: "Supervisão Revisão")
-        
-        data.append(obj1)
-        data.append(obj2)
-        tableView.reloadData()
+        self.ref.observe(.childAdded, with: { (snapshot) -> Void in
+            let userData = snapshot.value as! Dictionary<String, AnyObject>
+            
+            let function = funcao(id_funcao: snapshot.key,
+                                  nome: userData["name"] as! String!,
+                                  id_revisao: userData["revisao"] as! String!,
+                                  id_lider: userData["user"] as! String!)
+            self.data.append(function)
+            self.tableView.reloadData()
+        })
     }
     
 }
@@ -66,8 +69,8 @@ extension FunctionsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "funcCell", for: indexPath) as! FunctionsTableViewCell
         
-        cell.functionLabel.text = data[indexPath.row].function
-        cell.userNameLabel.text = data[indexPath.row].user.name
+        cell.functionLabel.text = data[indexPath.row].nome
+        cell.userNameLabel.text = data[indexPath.row].id_lider
         
         return cell
         

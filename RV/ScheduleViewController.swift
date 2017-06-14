@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 struct Event {
     var type : RVType!
@@ -19,7 +20,8 @@ class ScheduleViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    var data = [Event]()
+    var data = [escala]()
+    let ref = Database.database().reference().child("scales")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,23 +37,25 @@ class ScheduleViewController: UIViewController {
             loadData()
         } else {
             //only my preachs
-            var aux = [Event]()
-            aux = data.filter({ ($0.user.name == "Ms. Pedro Zanini")})
-            data = aux
+//            var aux = [Event]()
+//            aux = data.filter({ ($0.user == "Ms. Pedro Zanini")})
+            //data = aux
             tableView.reloadData()
         }
     }
     
-    func loadData() {
-//        let u1 = User(name: "Ms. Pedro Zanini", email: "pedrovzg@gmail.com")
-//        let u2 = User(name: "Bp. Raphael Assunção", email: "bprapha@gmail.com")
-//        
-//        let obj1 = Event(type: RVType.MAN_U20, user: u1, function: "Coordenação de Tenda")
-//        let obj2 = Event(type: RVType.MAN_U20, user: u2, function: <#T##String!#>, time: <#T##String!#>)
-//        
-//        data.append(obj1)
-//        data.append(obj2)
-//        tableView.reloadData()
+    func loadData () {
+        self.ref.observe(.childAdded, with: { (snapshot) -> Void in
+            let userData = snapshot.value as! Dictionary<String, AnyObject>
+            
+            let schedule = escala(id_escala: snapshot.key,
+                                  nome: userData["user"] as! String!,
+                                  tipo: userData["type"] as! String!,
+                                  horario: userData["time"] as! String!,
+                                  id_revisao: userData["revisao"] as! String!)
+            self.data.append(schedule)
+            self.tableView.reloadData()
+        })
     }
 
 }
@@ -60,8 +64,8 @@ extension ScheduleViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as! ScheduleTableViewCell
         
-//        cell.functionLabel.text = data[indexPath.row].function
-//        cell.userNameLabel.text = data[indexPath.row].user.name
+        cell.timeLabel.text = data[indexPath.row].horario
+        cell.nameLabel.text = data[indexPath.row].nome
         
         return cell
         
