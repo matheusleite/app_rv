@@ -11,24 +11,28 @@ import Foundation
 
 class lider{
 
-    
+    let id_lider:String
     let login:String
     let senha:String
     let coordenador:String
     let avatar:String
     let nome:String
-    let sobrenome:String
     let id_revisao:String
+    let equipe:String
+    let quarto:String
     
-    init(login:String, senha:String, coordenador:String, avatar:String, nome:String, sobrenome:String, id_revisao:String){
+    
+    required init(id_lider:String, login:String, senha:String, coordenador:String, avatar:String, nome:String, id_revisao:String, equipe:String, quarto:String){
         
+        self.id_lider = id_lider
         self.login = login
         self.senha = senha
         self.coordenador = coordenador
         self.avatar = avatar
         self.nome = nome
-        self.sobrenome = sobrenome
         self.id_revisao = id_revisao
+        self.equipe = equipe
+        self.quarto = quarto
         
     }
 }

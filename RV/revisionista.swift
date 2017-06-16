@@ -23,8 +23,9 @@ class revisionista{
     let st_chamada:String
     let id_revisao:String
     let id_lider:String
+    let quarto:String
     
-    init(id_revisionista:String, nome:String, sexo:String, equipe:String, cpf:String, rg:String, email:String, telefone:String, dt_nascimento:String, st_chamada:String, id_revisao:String, id_lider:String){
+    required init(id_revisionista:String, nome:String, sexo:String, equipe:String, cpf:String, rg:String, email:String, telefone:String, dt_nascimento:String, st_chamada:String, id_revisao:String, id_lider:String, quarto:String){
         
         self.id_revisionista = id_revisionista
         self.nome = nome
@@ -38,5 +39,6 @@ class revisionista{
         self.st_chamada = st_chamada
         self.id_revisao = id_revisao
         self.id_lider = id_lider
+        self.quarto = quarto
     }
 }

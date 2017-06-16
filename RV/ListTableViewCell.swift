@@ -10,6 +10,11 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var teamLabel: UILabel!
+    @IBOutlet weak var roomLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

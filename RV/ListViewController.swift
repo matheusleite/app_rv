@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ListViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    var data = [Function]()
+    var data = [lider]()
+    var dataRevisionista = [revisionista]()
+    let ref = Database.database().reference().child("leaders")
+    let refRevisionista = Database.database().reference().child("revisionista")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,25 +30,64 @@ class ListViewController: UIViewController {
             data.removeAll()
             loadData()
         } else {
-            //only my preachs
-            var aux = [Function]()
-            aux = data.filter({ ($0.user.name == "Ms. Pedro Zanini")})
-            data = aux
-            tableView.reloadData()
+            data.removeAll()
+            loadDataRevisionista()
         }
     }
     
-    func loadData() {}
+    func loadData() {
+        self.ref.observe(.childAdded, with: { (snapshot) -> Void in
+            let userData = snapshot.value as! Dictionary<String, AnyObject>
+            
+            let user = lider(id_lider: snapshot.key,
+                             login: userData["login"] as! String,
+                             senha: userData["senha"] as! String,
+                             coordenador: userData["coordenador"] as! String,
+                             avatar: userData["avatar"] as! String,
+                             nome: userData["nome"] as! String,
+                             id_revisao: userData["id_revisao"] as! String,
+                             equipe: userData["equipe"] as! String,
+                             quarto: userData["quarto"] as! String)
+            self.data.append(user)
+            self.tableView.reloadData()
+        })
+    }
+    
+    func loadDataRevisionista() {
+        self.refRevisionista.observe(.childAdded, with: { (snapshot) -> Void in
+            let userData = snapshot.value as! Dictionary<String, AnyObject>
+            
+            let auxrevisionista = revisionista(
+                id_revisionista: snapshot.key,
+                nome: userData["nome"] as! String,
+                sexo: userData["sexo"] as! String,
+                equipe: userData["equipe"] as! String,
+                cpf: userData["cpf"] as! String,
+                rg: userData["rg"] as! String,
+                email: userData["email"] as! String,
+                telefone: userData["telefone"] as! String,
+                dt_nascimento: userData["dt_nascimento"] as! String,
+                st_chamada: userData["st_chamada"] as! String,
+                id_revisao: userData["id_revisao"] as! String,
+                id_lider: userData["id_lider"] as! String,
+                quarto: userData["quarto"] as! String)
+            
+            self.dataRevisionista.append(auxrevisionista)
+            self.tableView.reloadData()
+        })
 
+    }
     
 }
+
 
 extension ListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
         
-//        cell.functionLabel.text = data[indexPath.row].function
-//        cell.userNameLabel.text = data[indexPath.row].user.name
+        cell.nameLabel.text = data[indexPath.row].nome
+        cell.teamLabel.text = data[indexPath.row].equipe
+        cell.roomLabel.text = data[indexPath.row].quarto
         
         return cell
         
