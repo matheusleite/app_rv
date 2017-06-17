@@ -19,6 +19,13 @@ class FunctionsDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        verifyIfIsAdmin()
+    }
+    
+    func verifyIfIsAdmin() {
+        if UserDefaults.standard.bool(forKey: "admin") == false {
+            self.navigationItem.rightBarButtonItems = nil
+        }
     }
 
     @IBAction func submit(_ sender: Any) {

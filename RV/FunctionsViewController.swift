@@ -34,6 +34,13 @@ class FunctionsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         loadData()
+        verifyIfIsAdmin()
+    }
+    
+    func verifyIfIsAdmin() {
+        if UserDefaults.standard.bool(forKey: "admin") == false {
+            self.navigationItem.rightBarButtonItems = nil
+        }
     }
 
     @IBAction func segmentChanged(_ sender: Any) {

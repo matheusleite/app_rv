@@ -25,10 +25,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func signIn(_ sender: Any) {
         performSegue(withIdentifier: "signIn", sender: nil)
-//        if (passwordField.text == "teste123" && usernameField.text == "pedrovzg@gmail.com") {
-//            performSegue(withIdentifier: "signIn", sender: nil)
-//        } else {
-//            //TODO: alert that this user is not registered
-//        }
+        if (passwordField.text == "admin" && usernameField.text == "coordenador@rv.com") {
+            
+            UserDefaults.standard.set(true, forKey: "admin")
+            performSegue(withIdentifier: "signIn", sender: nil)
+        } else if (passwordField.text == "teste123" && usernameField.text == "usuario@rv.com") {
+            
+            UserDefaults.standard.set(false, forKey: "admin")
+            performSegue(withIdentifier: "signIn", sender: nil)
+        }
     }
 }

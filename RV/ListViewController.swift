@@ -22,6 +22,13 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        verifyIfIsAdmin()
+    }
+    
+    func verifyIfIsAdmin() {
+        if UserDefaults.standard.bool(forKey: "admin") == false {
+            self.navigationItem.rightBarButtonItems = nil
+        }
     }
 
     @IBAction func segmentChanged(_ sender: Any) {
@@ -75,9 +82,7 @@ class ListViewController: UIViewController {
             self.dataRevisionista.append(auxrevisionista)
             self.tableView.reloadData()
         })
-
     }
-    
 }
 
 
@@ -103,5 +108,4 @@ extension ListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
-    
 }
