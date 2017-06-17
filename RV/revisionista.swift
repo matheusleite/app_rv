@@ -9,7 +9,7 @@
 import Foundation
 
 
-class revisionista{
+class revisionista: Equatable {
     
     let id_revisionista:String
     let nome:String
@@ -40,5 +40,9 @@ class revisionista{
         self.id_revisao = id_revisao
         self.id_lider = id_lider
         self.quarto = quarto
+    }
+    
+    static func ==(lhs:revisionista, rhs:revisionista) -> Bool { // Implement Equatable
+        return lhs.id_revisionista == rhs.id_revisionista
     }
 }

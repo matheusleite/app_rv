@@ -9,7 +9,7 @@
 import Foundation
 
 
-class lider{
+class lider : Equatable{
 
     let id_lider:String
     let login:String
@@ -34,5 +34,9 @@ class lider{
         self.equipe = equipe
         self.quarto = quarto
         
+    }
+    
+    static func ==(lhs:lider, rhs:lider) -> Bool { // Implement Equatable
+        return lhs.id_lider == rhs.id_lider
     }
 }
