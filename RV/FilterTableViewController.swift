@@ -17,6 +17,10 @@ class FilterTableViewController: UITableViewController {
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        //
+//    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)

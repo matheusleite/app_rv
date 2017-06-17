@@ -9,7 +9,6 @@
 import UIKit
 import FirebaseDatabase
 
-
 class ScheduleViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -93,6 +92,21 @@ class ScheduleViewController: UIViewController {
         })
     }
     
+    @IBAction func filter(_ sender: Any) {
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "filterVC")
+        present(nav, animated: true, completion: nil) 
+    }
+    
+    func verifyFilter () {
+        if let rvType = UserDefaults.standard.string(forKey: "rv_type") {
+            if data.count > 0 {
+                let aux = data.filter({ ($0.id_revisao == rvType)})
+                data = aux
+                tableView.reloadData()
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "schedule_detail" {
             let vc = segue.destination as! ScheduleDetailViewController
@@ -102,7 +116,6 @@ class ScheduleViewController: UIViewController {
             }
         }
     }
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "schedule_detail", sender: data[indexPath.row])

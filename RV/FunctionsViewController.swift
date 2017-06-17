@@ -42,6 +42,24 @@ class FunctionsViewController: UIViewController {
             self.navigationItem.rightBarButtonItems = nil
         }
     }
+    
+    @IBAction func filter(_ sender: Any) {
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        verifyFilter()
+    }
+    
+    func verifyFilter () {
+        if let rvType = UserDefaults.standard.string(forKey: "rv_type") {
+            if data.count > 0 {
+                let aux = data.filter({ ($0.id_revisao == rvType)})
+                data = aux
+                tableView.reloadData()
+            }
+        }
+    }
 
     @IBAction func segmentChanged(_ sender: Any) {
         if segmentedControl.selectedSegmentIndex == 0 {
@@ -50,9 +68,9 @@ class FunctionsViewController: UIViewController {
             loadData()
         } else {
             //only my preachs
-//            var aux = [Function]()
-//            aux = data.filter({ ($0.user.name == "Ms. Pedro Zanini")})
-//            data = aux
+            var aux = [funcao]()
+            aux = data.filter({ ($0.id_lider == "Miss. Pedro Zanini")})
+            data = aux
             tableView.reloadData()
         }
     }

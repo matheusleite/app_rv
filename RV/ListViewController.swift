@@ -45,6 +45,26 @@ class ListViewController: UIViewController {
         }
     }
     
+    @IBAction func filter(_ sender: Any) {
+        
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "filterVC")
+        present(nav, animated: true, completion: nil)    
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        verifyFilter()
+    }
+    
+    func verifyFilter () {
+        if let rvType = UserDefaults.standard.string(forKey: "rv_type") {
+            if data.count > 0 {
+                let aux = data.filter({ ($0.id_revisao == rvType)})
+                data = aux
+                tableView.reloadData()
+            }
+        }
+    }
+    
     func loadData() {
         self.ref.observe(.childAdded, with: { (snapshot) -> Void in
             let userData = snapshot.value as! Dictionary<String, AnyObject>
@@ -93,8 +113,6 @@ class ListViewController: UIViewController {
         })
     }
 }
-
-
 extension ListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell

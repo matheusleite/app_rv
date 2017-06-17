@@ -53,14 +53,14 @@ class PreachingsViewController: UIViewController {
             let userData = snapshot.value as! Dictionary<String, AnyObject>
             print(userData["preacher"] as! String!)
             let preach = palavra(id_palavra: snapshot.key,
-                                 id_revisao: "1",
+                                 id_revisao: userData["id_revisao"] as! String!,
                                  id_lider: userData["preacher"] as! String!,
-                                 nome: userData["preacher"] as! String!,
+                                 nome: userData["name"] as! String!,
                                  horario: userData["time"] as! String!, duracao: userData["duration"] as! String!)
             self.data.append(preach)
             self.tableView.reloadData()
         })
-        remove()
+        //remove()
     }
     
     func remove () {
@@ -76,6 +76,21 @@ class PreachingsViewController: UIViewController {
         present(nav, animated: true, completion: nil)
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        verifyFilter()
+    }
+    
+    func verifyFilter () {
+        if let rvType = UserDefaults.standard.string(forKey: "rv_type") {
+            if data.count > 0 {
+                let aux = data.filter({ ($0.id_revisao == rvType)})
+                data = aux
+                tableView.reloadData()
+            }
+        }
+    }
+    
     @IBAction func segmentChanged(_ sender: Any) {
         if segmentedControl.selectedSegmentIndex == 0 {
             //limpo o array
@@ -85,9 +100,9 @@ class PreachingsViewController: UIViewController {
             loadData()
         } else {
             //filtrando array
-//            var aux = [Preach]()
-//            aux = data.filter({ ($0.user.name == "Ms. Pedro Zanini")})
-//            data = aux
+            var aux = [palavra]()
+            aux = data.filter({ ($0.id_lider == "Miss. Pedro Zanini")})
+            data = aux
             
             //reload na table view
             tableView.reloadData()
@@ -105,16 +120,14 @@ class PreachingsViewController: UIViewController {
     }
 }
 
-
-
 extension PreachingsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "preachCell", for: indexPath) as! PreachCell
         
         //alimentando a celula atraves dos dados do array
         cell.time.text = data[indexPath.row].horario
-        cell.userName.text = data[indexPath.row].nome
-        cell.title.text = data[indexPath.row].horario
+        cell.userName.text = data[indexPath.row].id_lider
+        cell.title.text = data[indexPath.row].nome
         
         return cell
     }
