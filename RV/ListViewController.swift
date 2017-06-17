@@ -16,13 +16,16 @@ class ListViewController: UIViewController {
     var data = [lider]()
     var dataRevisionista = [revisionista]()
     let ref = Database.database().reference().child("leaders")
-    let refRevisionista = Database.database().reference().child("revisionista")
+    let refRevisionista = Database.database().reference().child("revisionistas")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         verifyIfIsAdmin()
+        loadData()
+        loadDataRevisionista()
+        
     }
     
     func verifyIfIsAdmin() {
@@ -34,11 +37,11 @@ class ListViewController: UIViewController {
     @IBAction func segmentChanged(_ sender: Any) {
         if segmentedControl.selectedSegmentIndex == 0 {
             //all preachs
-            data.removeAll()
-            loadData()
+            
+            self.tableView.reloadData()
         } else {
-            data.removeAll()
-            loadDataRevisionista()
+            
+            self.tableView.reloadData()
         }
     }
     
@@ -55,8 +58,11 @@ class ListViewController: UIViewController {
                              id_revisao: userData["id_revisao"] as! String,
                              equipe: userData["equipe"] as! String,
                              quarto: userData["quarto"] as! String)
-            self.data.append(user)
-            self.tableView.reloadData()
+            
+            if !self.data.contains(user) {
+                self.data.append(user)
+                self.tableView.reloadData()
+            }
         })
     }
     
@@ -79,8 +85,11 @@ class ListViewController: UIViewController {
                 id_lider: userData["id_lider"] as! String,
                 quarto: userData["quarto"] as! String)
             
-            self.dataRevisionista.append(auxrevisionista)
-            self.tableView.reloadData()
+            
+            if !self.dataRevisionista.contains(auxrevisionista) {
+                self.dataRevisionista.append(auxrevisionista)
+                self.tableView.reloadData()
+            }
         })
     }
 }
@@ -90,9 +99,20 @@ extension ListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
         
-        cell.nameLabel.text = data[indexPath.row].nome
-        cell.teamLabel.text = data[indexPath.row].equipe
-        cell.roomLabel.text = data[indexPath.row].quarto
+        if segmentedControl.selectedSegmentIndex == 0 {
+            
+            cell.nameLabel.text = data[indexPath.row].nome
+            cell.teamLabel.text = data[indexPath.row].equipe
+            cell.roomLabel.text = data[indexPath.row].quarto
+
+        } else {
+            
+            cell.nameLabel.text = dataRevisionista[indexPath.row].nome
+            cell.teamLabel.text = dataRevisionista[indexPath.row].equipe
+            cell.roomLabel.text = dataRevisionista[indexPath.row].quarto
+
+        }
+        
         
         return cell
         
