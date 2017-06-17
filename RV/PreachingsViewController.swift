@@ -37,6 +37,10 @@ class PreachingsViewController: UIViewController {
         verifyIfIsAdmin()
     }
     
+    deinit {
+        ref.removeAllObservers()
+    }
+    
     func verifyIfIsAdmin() {
         if UserDefaults.standard.bool(forKey: "admin") == false {
             self.navigationItem.rightBarButtonItems = nil
@@ -55,6 +59,14 @@ class PreachingsViewController: UIViewController {
                                  horario: userData["time"] as! String!, duracao: userData["duration"] as! String!)
             self.data.append(preach)
             self.tableView.reloadData()
+        })
+        remove()
+    }
+    
+    func remove () {
+        self.ref.observe(.childAdded, with: { (snapshot) -> Void in
+            let userData = snapshot.value as! Dictionary<String, AnyObject>
+            print(userData["preacher"] as! String!)
         })
     }
     

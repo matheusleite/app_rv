@@ -11,17 +11,35 @@ import FirebaseDatabase
 
 class FunctionsDetailViewController: UIViewController {
 
+    var RVTypes =  [String]()
     let ref = Database.database().reference()
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var revisaoField: UITextField!
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     var funcao : funcao! = nil
+    var pickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         verifyEditMode()
+        
+        pickerView.delegate = self
+        revisaoField.inputView = pickerView
+        getRVTypes()
+    }
+    
+    func getRVTypes () {
+        let reference = Database.database().reference().child("revisions")
+        reference.observe(.childAdded, with: { (snapshot) -> Void in
+            let userData = snapshot.value as! Dictionary<String, AnyObject>
+            
+            self.RVTypes.append(userData["nome"] as! String )
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     func verifyIfIsAdmin() {
@@ -79,4 +97,22 @@ class FunctionsDetailViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+}
+
+
+extension FunctionsDetailViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int { return 1 }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return RVTypes.count
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return RVTypes[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        revisaoField.text = RVTypes[row]
+    }
 }

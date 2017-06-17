@@ -11,6 +11,9 @@ import FirebaseDatabase
 
 class ScheduleDetailViewController: UIViewController {
 
+    var times =  ["08:00", "09:00"]
+    var types =  ["Tenda", "Cozinha", "Intercessão", "Banheiros"]
+    var array =  [String]()
     let ref = Database.database().reference().child("scales")
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var typeField: UITextField!
@@ -18,15 +21,28 @@ class ScheduleDetailViewController: UIViewController {
     @IBOutlet weak var revisaoField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     var escala : escala! = nil
+    var pickerView = UIPickerView()
+    var selectedField = UITextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         self.verifyEditMode()
+        pickerView.delegate = self
+        
+        revisaoField.inputView = pickerView
+        typeField.inputView = pickerView
+        timeField.inputView = pickerView
+        
+        revisaoField.delegate = self
+        typeField.delegate = self
+        timeField.delegate = self
+        getRVTypes()
     }
     
     func verifyEditMode () {
         if (escala != nil) {
+            
             userField.text = escala.nome
             typeField.text = escala.tipo
             timeField.text = escala.horario
@@ -74,11 +90,90 @@ class ScheduleDetailViewController: UIViewController {
         }
     }
     
-    
-    
-    
     func close () {
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    func getRVTypes () {
+        let reference = Database.database().reference().child("revisions")
+        reference.observe(.childAdded, with: { (snapshot) -> Void in
+            let userData = snapshot.value as! Dictionary<String, AnyObject>
+            
+            self.array.append(userData["nome"] as! String )
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
 
+}
+
+extension ScheduleDetailViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int { return 1 }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch selectedField {
+        case revisaoField:
+            return array.count
+        case typeField:
+            return types.count
+        case timeField:
+            return times.count
+        default :
+            return 0
+        }
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch selectedField {
+        case revisaoField:
+            return array[row]
+        case typeField:
+            return types[row]
+        case timeField:
+            return times[row]
+        default :
+            return ""
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        switch selectedField {
+        case revisaoField:
+            revisaoField.text = array[row]
+            break
+        case typeField:
+            typeField.text = types[row]
+            break
+        case timeField:
+            timeField.text = times[row]
+            break
+        default :
+            break
+        }
+    }
+}
+
+extension ScheduleDetailViewController : UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case revisaoField:
+            selectedField = revisaoField
+            break
+        case typeField:
+            selectedField = typeField
+            break
+        case timeField:
+            selectedField = timeField
+            break
+        default:
+            break
+        }
+        
+        pickerView.reloadAllComponents()
+    }
+    
 }

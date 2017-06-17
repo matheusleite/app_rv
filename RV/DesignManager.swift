@@ -25,10 +25,10 @@ class DesignManager: NSObject {
 //
 //        //UINavigationBar.appearance().setBackgroundImage(UIImage(named: "logo"), for: UIBarMetrics.default)
 //        UINavigationBar.appearance().isTranslucent = false
-//        //UIBarButtonItem.appearance().tintColor = UIColor.black
+        UIBarButtonItem.appearance().tintColor = flatWhite
         UINavigationBar.appearance().titleTextAttributes = fontAttributes
         UIBarButtonItem.appearance().setTitleTextAttributes(fontAttributes, for: UIControlState.normal)
-//        UIApplication.shared.statusBarStyle = .default
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     //    func formatDate(dateString: String, dateFormat: String) -> String {
