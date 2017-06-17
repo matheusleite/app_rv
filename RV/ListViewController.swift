@@ -14,9 +14,12 @@ class ListViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     var data = [lider]()
+    var fixData = [lider]()
     var dataRevisionista = [revisionista]()
+    var fixDataRV = [revisionista]()
     let ref = Database.database().reference().child("leaders")
     let refRevisionista = Database.database().reference().child("revisionistas")
+    var filter = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,18 +51,22 @@ class ListViewController: UIViewController {
     @IBAction func filter(_ sender: Any) {
         
         let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "filterVC")
-        present(nav, animated: true, completion: nil)    
+        present(nav, animated: true, completion: nil)
+        filter = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        verifyFilter()
+        if filter == true { verifyFilter() }
     }
     
     func verifyFilter () {
         if let rvType = UserDefaults.standard.string(forKey: "rv_type") {
             if data.count > 0 {
-                let aux = data.filter({ ($0.id_revisao == rvType)})
+                let aux = fixData.filter({ ($0.id_revisao == rvType)})
                 data = aux
+                let aux2 = fixDataRV.filter({ ($0.id_revisao == rvType)})
+                dataRevisionista = aux2
+                
                 tableView.reloadData()
             }
         }
@@ -81,6 +88,7 @@ class ListViewController: UIViewController {
             
             if !self.data.contains(user) {
                 self.data.append(user)
+                self.fixData.append(user)
                 self.tableView.reloadData()
             }
         })
@@ -108,6 +116,7 @@ class ListViewController: UIViewController {
             
             if !self.dataRevisionista.contains(auxrevisionista) {
                 self.dataRevisionista.append(auxrevisionista)
+                self.fixDataRV.append(auxrevisionista)
                 self.tableView.reloadData()
             }
         })

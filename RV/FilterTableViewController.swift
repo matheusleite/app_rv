@@ -29,16 +29,16 @@ class FilterTableViewController: UITableViewController {
         
         switch cell?.reuseIdentifier {
         case "WOMAN_U21"?:
-            strd.set("WOMAN_U21", forKey: "rv_type")
+            strd.set("Mulheres abaixo de 21 anos", forKey: "rv_type")
             break
         case "WOMAN_O21"?:
-            strd.set("WOMAN_O21", forKey: "rv_type")
+            strd.set("Mulheres acima de 21 anos", forKey: "rv_type")
             break
         case "MAN_U21"?:
-            strd.set("MAN_U21", forKey: "rv_type")
+            strd.set("Homens abaixo de 21 anos", forKey: "rv_type")
             break
         case "MAN_O21"?:
-            strd.set("MAN_O21", forKey: "rv_type")
+            strd.set("Homens acima de 21 anos", forKey: "rv_type")
             break
         default:
             break

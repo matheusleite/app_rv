@@ -5,20 +5,6 @@
 //  Created by Matheus Leite on 29/05/17.
 //  Copyright © 2017 Wavez. All rights reserved.
 //
-
-//estruturas simples para criar dados fake
-struct User {
-    var name : String!
-    var email : String!
-}
-
-struct Preach {
-    var description : String!
-    var user : User!
-    var time : String!
-}
-
-
 import UIKit
 import FirebaseDatabase
 
@@ -26,8 +12,10 @@ class PreachingsViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    var data = [palavra]() //array onde ficará os dados fake e alimentará a tableView
+    var data = [palavra]()
+    var fixData = [palavra]()
     let ref = Database.database().reference().child("preaches")
+    var filter = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +46,9 @@ class PreachingsViewController: UIViewController {
                                  nome: userData["name"] as! String!,
                                  horario: userData["time"] as! String!, duracao: userData["duration"] as! String!)
             self.data.append(preach)
+            self.fixData.append(preach)
             self.tableView.reloadData()
         })
-        //remove()
     }
     
     func remove () {
@@ -74,17 +62,17 @@ class PreachingsViewController: UIViewController {
         
         let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "filterVC")
         present(nav, animated: true, completion: nil)
-        
+        filter = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        verifyFilter()
+        if filter == true { verifyFilter() }
     }
     
     func verifyFilter () {
         if let rvType = UserDefaults.standard.string(forKey: "rv_type") {
             if data.count > 0 {
-                let aux = data.filter({ ($0.id_revisao == rvType)})
+                let aux = fixData.filter({ ($0.id_revisao == rvType)})
                 data = aux
                 tableView.reloadData()
             }
@@ -100,6 +88,7 @@ class PreachingsViewController: UIViewController {
             loadData()
         } else {
             //filtrando array
+            
             var aux = [palavra]()
             aux = data.filter({ ($0.id_lider == "Miss. Pedro Zanini")})
             data = aux

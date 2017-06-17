@@ -16,17 +16,19 @@ enum RVType {
     case MAN_O21 //mens over 20 years old
 }
 
-struct Function {
-    var type : RVType!
-    var user : User!
-    var function : String!
-}
+//struct Function {
+//    var type : RVType!
+//    var user : User!
+//    var function : String!
+//}
 
 class FunctionsViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     var data = [funcao]()
+    var fixData = [funcao]()
+    var filter = false
     let ref = Database.database().reference().child("functions")
     
     override func viewDidLoad() {
@@ -44,6 +46,9 @@ class FunctionsViewController: UIViewController {
     }
     
     @IBAction func filter(_ sender: Any) {
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "filterVC")
+        present(nav, animated: true, completion: nil)
+        filter = true
     }
     
     
@@ -54,7 +59,7 @@ class FunctionsViewController: UIViewController {
     func verifyFilter () {
         if let rvType = UserDefaults.standard.string(forKey: "rv_type") {
             if data.count > 0 {
-                let aux = data.filter({ ($0.id_revisao == rvType)})
+                let aux = fixData.filter({ ($0.id_revisao == rvType)})
                 data = aux
                 tableView.reloadData()
             }
