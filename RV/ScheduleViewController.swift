@@ -9,18 +9,13 @@
 import UIKit
 import FirebaseDatabase
 
-struct Event {
-    var type : RVType!
-    var user : User!
-    var function : String!
-    var time : String!
-}
 
 class ScheduleViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     var data = [escala]()
+    var dataFixa = [escala]()
     let ref = Database.database().reference().child("scales")
     
     override func viewDidLoad() {
@@ -38,17 +33,47 @@ class ScheduleViewController: UIViewController {
     }
     
     @IBAction func segmentChanged(_ sender: Any) {
-        if segmentedControl.selectedSegmentIndex == 0 {
-            //all preachs
+        
+        
+        switch segmentedControl.selectedSegmentIndex {
+        
+        case 0:
             data.removeAll()
-            loadData()
-        } else {
-            //only my preachs
-//            var aux = [Event]()
-//            aux = data.filter({ ($0.user == "Ms. Pedro Zanini")})
-            //data = aux
-            tableView.reloadData()
+            data = dataFixa
+            var aux = [escala]()
+            aux = data.filter({($0.tipo == "Tenda")})
+            data = aux
+            
+        
+        case 1:
+            data.removeAll()
+            data = dataFixa
+            var aux = [escala]()
+            aux = data.filter({($0.tipo == "Cozinha")})
+            data = aux
+            
+            
+        case 2:
+            data.removeAll()
+            data = dataFixa
+            var aux = [escala]()
+            aux = data.filter({($0.tipo == "Intercessão")})
+            data = aux
+           
+            
+        case 3:
+            data.removeAll()
+            data = dataFixa
+            var aux = [escala]()
+            aux = data.filter({($0.tipo == "Banheiros")})
+            data = aux
+            
+            
+        default: break
+        
         }
+        
+        tableView.reloadData()
     }
     
     func loadData () {
@@ -60,7 +85,10 @@ class ScheduleViewController: UIViewController {
                                   tipo: userData["type"] as! String!,
                                   horario: userData["time"] as! String!,
                                   id_revisao: userData["revisao"] as! String!)
-            self.data.append(schedule)
+            if schedule.tipo == "Tenda" {
+             self.data.append(schedule)   
+            }
+            self.dataFixa.append(schedule)
             self.tableView.reloadData()
         })
     }
