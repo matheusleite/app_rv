@@ -70,6 +70,22 @@ class FunctionsViewController: UIViewController {
         })
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "function_detail" {
+            let vc = segue.destination as! FunctionsDetailViewController
+            
+            if let funcao = sender as? funcao {
+                vc.funcao = funcao
+            }
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "function_detail", sender: data[indexPath.row])
+    }
+    
+    
 }
 
 extension FunctionsViewController : UITableViewDelegate {
