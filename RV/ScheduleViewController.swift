@@ -64,6 +64,21 @@ class ScheduleViewController: UIViewController {
             self.tableView.reloadData()
         })
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "schedule_detail" {
+            let vc = segue.destination as! ScheduleDetailViewController
+            
+            if let escala = sender as? escala {
+                vc.escala = escala
+            }
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "schedule_detail", sender: data[indexPath.row])
+    }
 
 }
 
@@ -88,5 +103,5 @@ extension ScheduleViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
-    
 }
+

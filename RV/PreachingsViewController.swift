@@ -81,6 +81,16 @@ class PreachingsViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "preach_detail" {
+            let vc = segue.destination as! PreachDetailViewController
+            
+            if let preach = sender as? palavra {
+                vc.preach = preach
+            }
+        }
+    }
 }
 
 
@@ -89,14 +99,16 @@ extension PreachingsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "preachCell", for: indexPath) as! PreachCell
         
-        
         //alimentando a celula atraves dos dados do array
         cell.time.text = data[indexPath.row].horario
         cell.userName.text = data[indexPath.row].nome
         cell.title.text = data[indexPath.row].horario
         
         return cell
-        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "preach_detail", sender: data[indexPath.row])
     }
 }
 
