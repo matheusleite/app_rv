@@ -425,7 +425,7 @@
             <objects>
                 <navigationController id="bp7-Nr-JdG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Escala" image="schedule" selectedImage="schedule_selected" id="1OM-jZ-SBo"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Nk7-sJ-zLq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Nk7-sJ-zLq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -462,7 +462,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzS-Hy-beK">
-                                                    <rect key="frame" x="15" y="23" width="53" height="20"/>
+                                                    <rect key="frame" x="15" y="22.5" width="53" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="53" id="i3g-HL-qEr"/>
                                                     </constraints>
@@ -471,7 +471,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palavra de Deus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMN-Bm-IYs">
-                                                    <rect key="frame" x="75" y="23" width="292" height="19"/>
+                                                    <rect key="frame" x="75" y="22.5" width="292" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -809,7 +809,7 @@
             <objects>
                 <navigationController id="fAv-OI-cRz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Funções" image="function" selectedImage="function_selected" id="Jfh-08-egi"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="fuq-cH-f3r">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="fuq-cH-f3r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

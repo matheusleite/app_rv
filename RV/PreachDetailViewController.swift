@@ -63,6 +63,7 @@ class PreachDetailViewController: UIViewController {
             self.ref.child(preach.id_palavra).setValue(["name": nameField.text!,
                                                                  "duration" : durationField.text!,
                                                                  "time" : timeField.text!,
+                                                                 "id_revisao" : "Homens acima de 21 anos",
                                                                  "preacher" : preacherField.text!])
             
             let alert = UIAlertController(title: "Pronto!", message: "Sua pregação foi atualizada.", preferredStyle: .alert)
